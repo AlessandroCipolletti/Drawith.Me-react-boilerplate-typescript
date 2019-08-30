@@ -6,4 +6,4 @@ exports[`<HomePage /> should render and match the snapshot 1`] = `
     This is the HomePage container!
   </span>
 </h1>
-`;
+`
