@@ -19,7 +19,7 @@ module.exports = {
       validate: value => {
         if (/.+/.test(value)) {
           return componentExists(value)
-            ? 'A component or container with this name already exists'
+            ? 'A component or container or page with this name already exists'
             : true
         }
 

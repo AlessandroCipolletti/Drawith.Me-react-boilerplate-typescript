@@ -6,13 +6,16 @@
 
 const fs = require('fs')
 const path = require('path')
-const pageComponents = fs.readdirSync(
+const appComponents = fs.readdirSync(
   path.join(__dirname, '../../../app/components'),
 )
-const pageContainers = fs.readdirSync(
+const appContainers = fs.readdirSync(
   path.join(__dirname, '../../../app/containers'),
 )
-const components = pageComponents.concat(pageContainers)
+const appPages = fs.readdirSync(
+  path.join(__dirname, '../../../app/pages'),
+)
+const components = appComponents.concat(appContainers).concat(appPages)
 
 function componentExists(comp) {
   return components.indexOf(comp) >= 0
