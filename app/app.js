@@ -15,6 +15,10 @@ import App from 'containers/App'
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider'
 
+// Import de Theme Provider
+import { ThemeProvider } from 'styled-components'
+import Theme from 'common/theme'
+
 // Load the favicon and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */
 import '!file-loader?name=[name].[ext]!./images/favicon.ico'
@@ -36,7 +40,9 @@ const render = messages => {
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <App />
+          <ThemeProvider theme={Theme}>
+            <App />
+          </ThemeProvider>
         </ConnectedRouter>
       </LanguageProvider>
     </Provider>,
