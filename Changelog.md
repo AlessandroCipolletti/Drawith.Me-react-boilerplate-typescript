@@ -1,6 +1,15 @@
 # Changelog
 
-## Drawith.Me 1.0: Titolo versione
+## Drawith.Me 0.1: Initial commit  (03/09/19)
+
+- Initial commit React Boilerplate 4.0
+- Cleaned project
+- New babel module resolver config
+- New `/app/pages/` folder for pages
+- New generator for pages
+
+
+
 
 ### Sotto capitolo versione
 
