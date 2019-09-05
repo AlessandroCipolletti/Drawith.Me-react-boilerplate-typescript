@@ -20,7 +20,11 @@ import Popup from '../index'
 describe('<Popup />', () => {
   it('Expect to not log errors in console', () => {
     const spy = jest.spyOn(global.console, 'error')
-    render(<Popup />)
+    render(
+      <ThemeProvider theme={Theme}>
+        <Popup />
+      </ThemeProvider>,
+    )
     expect(spy).not.toHaveBeenCalled()
   })
 

@@ -11,6 +11,11 @@ import { render } from 'react-testing-library'
 {{#if wantMessages}}
 import { IntlProvider } from 'react-intl'
 {{/if}}
+
+// Import de Theme Provider
+import { ThemeProvider } from 'styled-components'
+import Theme from 'common/theme'
+
 // import 'jest-dom/extend-expect' // add some helpful assertions
 
 import {{ properCase name }} from '../index'
@@ -24,11 +29,17 @@ describe('<{{ properCase name }} />', () => {
 {{#if wantMessages}}
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
-        <{{ properCase name }} />
+        <ThemeProvider theme={Theme}>
+          <{{ properCase name }} />
+        </ThemeProvider>
       </IntlProvider>,
     )
 {{else}}
-    render(<{{ properCase name }} />)
+    render(
+      <ThemeProvider theme={Theme}>
+        <{{ properCase name }} />
+      </ThemeProvider>,
+    )
 {{/if}}
     expect(spy).not.toHaveBeenCalled()
   })
@@ -48,13 +59,19 @@ describe('<{{ properCase name }} />', () => {
       container: { firstChild },
     } = render(
       <IntlProvider locale={DEFAULT_LOCALE}>
-        <{{ properCase name }} />
+        <ThemeProvider theme={Theme}>
+          <{{ properCase name }} />
+        </ThemeProvider>
       </IntlProvider>,
     )
 {{else}}
     const {
       container: { firstChild },
-    } = render(<{{ properCase name }} />)
+    } = render(
+      <ThemeProvider theme={Theme}>
+        <{{ properCase name }} />
+      </ThemeProvider>,
+    )
 {{/if}}
     expect(firstChild).toMatchSnapshot()
   })
