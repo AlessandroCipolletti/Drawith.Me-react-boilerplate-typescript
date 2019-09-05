@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Helmet } from 'react-helmet'
@@ -20,13 +20,22 @@ export function Folder() {
   useInjectReducer({ key: 'folder', reducer })
   useInjectSaga({ key: 'folder', saga })
 
+  const [showPopup, setShowPopup] = useState(true)
+
+  const hidePopup = () => {
+    setShowPopup(false)
+  }
+
   return (
     <div>
       <Helmet>
         <title>Folder</title>
         <meta name="description" content="Description of Folder" />
       </Helmet>
-      <Popup />
+
+      {showPopup && <Popup
+        callback={hidePopup}
+      />}
     </div>
   )
 }
