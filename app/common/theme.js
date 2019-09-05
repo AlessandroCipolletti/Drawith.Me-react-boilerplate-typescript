@@ -1,4 +1,4 @@
-const mainColor = 'rgba(253, 83, 30, 0.5)'
+const mainColor = 'rgba(253, 83, 30, 0.2)'
 const whiteColor = 'rgba(255, 255, 255, 1)'
 
 const spacingUnit = 8
@@ -19,6 +19,9 @@ const Theme = {
   },
   UIColors: {
     popupBackgroundColor: mainColor,
+  },
+  timing: {
+    fadeAnimation: '0.3s',
   },
 }
 

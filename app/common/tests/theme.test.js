@@ -49,9 +49,15 @@ describe('<Overlay />', () => {
     expect(hasUIColors).toBe(true)
   })
 
-  it('should not contain other keys than `palette` `spacing` `UIColors`', () => {
+  it('should contain `timinng` key', () => {
+    const hasTimig = typeof Theme.timing !== 'undefined'
+
+    expect(hasTimig).toBe(true)
+  })
+
+  it('should not contain other keys than `palette` `spacing` `UIColors` `timing`', () => {
     const themeKeys = Object.keys(Theme)
 
-    expect(themeKeys.length).toBe(3)
+    expect(themeKeys.length).toBe(4)
   })
 })
