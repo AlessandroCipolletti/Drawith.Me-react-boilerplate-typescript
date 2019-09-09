@@ -1,6 +1,6 @@
-// import produce from 'immer'
+import produce from 'immer'
 import folderReducer from '../reducer'
-// import { someAction } from '../actions'
+import { defaultAction } from '../actions'
 
 /* eslint-disable default-case, no-param-reassign */
 describe('folderReducer', () => {
@@ -17,17 +17,8 @@ describe('folderReducer', () => {
     expect(folderReducer(undefined, {})).toEqual(expectedResult)
   })
 
-  /**
-   * Example state change comparison
-   *
-   * it('should handle the someAction action correctly', () => {
-   *   const expectedResult = produce(state, draft => {
-   *     draft.loading = true
-   *     draft.error = false
-   *     draft.userData.nested = false
-   *   })
-   *
-   *   expect(appReducer(state, someAction())).toEqual(expectedResult)
-   * })
-   */
+  it('should handle the defaultAction action correctly', () => {
+    const expectedResult = produce(state, draft => draft)
+    expect(folderReducer(state, defaultAction())).toEqual(expectedResult)
+  })
 })
