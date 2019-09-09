@@ -1,86 +1,74 @@
-// export const gray = [
-//   '#202020',  // dark
-//   '#414141',
-//   '#5a5a5a',
-//   '#777777',  // default
-//   '#929292',
-//   '#adadad',
-//   '#c9c9c9',  // light
-// ]
+export const gray = {
+  0: '#22252a',
+  1: '#353a3f',
+  2: '#4a5056',
+  3: '#878e95',
+  4: '#aeb5bc',
+  5: '#cfd4d9',
+  6: '#dfe2e6',
+  7: '#e9ecef',
+  8: '#f1f3f5',
+  9: '#f8f9fa',
+}
 
+export const orange = {
+  0: '#661c00',  // dark
+  1: '#992900',
+  2: '#cc3700',
+  3: '#ff4500',  // default
+  4: '#ff6a33',
+  5: '#ff8f66',
+  6: '#ffb599',  // light
+}
 
-export const gray = [
-  '#22252a',
-  '#353a3f',
-  '#4a5056',
-  '#878e95',
-  '#aeb5bc',
-  '#cfd4d9',
-  '#dfe2e6',
-  '#e9ecef',
-  '#f1f3f5',
-  '#f8f9fa',
-]
+export const red = {
+  0: '#5a1e1b',  // dark
+  1: '#7d2621',
+  2: '#ab3029',
+  3: '#cb4039',  // default
+  4: '#d56b69',
+  5: '#ebadac',
+  6: '#f6e6e6',  // light
+}
 
+export const yellow = {
+  0: '#59481d',  // dark
+  1: '#886d2f',
+  2: '#c5a550',
+  3: '#efca74',  // default
+  4: '#f7e2a7',
+  5: '#fcf3da',
+  6: '#fffcf5',  // light
+}
 
-export const orange = [
-  '#661c00',  // dark
-  '#992900',
-  '#cc3700',
-  '#ff4500',  // default
-  '#ff6a33',
-  '#ff8f66',
-  '#ffb599',  // light
-]
+export const green = {
+  0: '#27503b',  // dark
+  1: '#377547',
+  2: '#4b9a5f',
+  3: '#60bd79',  // default
+  4: '#8bd6a3',
+  5: '#b6ebc4',
+  6: '#e7fbed',  // light
+}
 
-export const red = [
-  '#5a1e1b',  // dark
-  '#7d2621',
-  '#ab3029',
-  '#cb4039',  // default
-  '#d56b69',
-  '#ebadac',
-  '#f6e6e6',  // light
-]
+export const blue = {
+  0: '#263d52',  // dark
+  1: '#24496e',
+  2: '#33689d',
+  3: '#4483c2',  // default
+  4: '#6fa1d3',
+  5: '#b1d3f2',
+  6: '#f0f8fe',  // light
+}
 
-export const yellow = [
-  '#59481d',  // dark
-  '#886d2f',
-  '#c5a550',
-  '#efca74',  // default
-  '#f7e2a7',
-  '#fcf3da',
-  '#fffcf5',  // light
-]
-
-export const green = [
-  '#27503b',  // dark
-  '#377547',
-  '#4b9a5f',
-  '#60bd79',  // default
-  '#8bd6a3',
-  '#b6ebc4',
-  '#e7fbed',  // light
-]
-
-export const blue = [
-  '#263d52',  // dark
-  '#24496e',
-  '#33689d',
-  '#4483c2',  // default
-  '#6fa1d3',
-  '#b1d3f2',
-  '#f0f8fe',  // light
-]
-
-export const rose = [
-  '#204444',  // dark
-  '#30635e',
-  '#488f87',
-  '#5baba3',  // default
-  '#86d4d2',
-  '#b5ecea',
-  '#ebfefe',  // light
-]
+export const rose = {
+  0: '#204444',  // dark
+  1: '#30635e',
+  2: '#488f87',
+  3: '#5baba3',  // default
+  4: '#86d4d2',
+  5: '#b5ecea',
+  6: '#ebfefe',  // light
+}
 
 export const white = '#ffffff'
