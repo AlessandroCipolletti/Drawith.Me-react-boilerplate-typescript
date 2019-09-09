@@ -1,14 +1,18 @@
-export function parseColorRgbStringToRgba (color) {
-  color = color.substring(4).replace(")", "").replace(" ", "").split(",")
+export function parseColorRgbStringToRgba (rgbaStringColor) {
+  const colors = rgbaStringColor.substring(rgbaStringColor.indexOf('(') + 1).replace(")", "").replace(" ", "").split(",")
   return {
-    r: parseInt(color[0]),
-    g: parseInt(color[1]),
-    b: parseInt(color[2]),
-    a: color[3] ? parseInt(color[3]) : 1,
+    r: parseInt(colors[0]),
+    g: parseInt(colors[1]),
+    b: parseInt(colors[2]),
+    a: colors[3] ? parseFloat(colors[3]) : 1,
   }
 }
 
 export function parseColorHexToRgb (hex) {
+  if (hex[0] === '#') {
+    hex = hex.substr(1, 6)
+  }
+
   return {
     r: parseInt(hex.substring(0, 2), 16),
     g: parseInt(hex.substring(2, 4), 16),
