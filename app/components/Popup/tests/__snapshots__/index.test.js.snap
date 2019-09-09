@@ -2,15 +2,15 @@
 
 exports[`<Popup /> Should render and match the snapshot 1`] = `
 <div
-  class="sc-bdVaJa sc-kGXeez cAZYpY"
+  class="sc-bdVaJa sc-kGXeez gvkiBY"
   direction="normal"
   display="block"
 >
   <div
-    class="Overlay-sc-1a759bz-0 jLMcBQ"
+    class="Overlay-sc-1a759bz-0 ijlweS"
   >
     <div
-      class="Wrapper-sc-16czn8l-0 jFXbjZ"
+      class="Wrapper-sc-16czn8l-0 kmMXKg"
     >
       CONTENT
     </div>

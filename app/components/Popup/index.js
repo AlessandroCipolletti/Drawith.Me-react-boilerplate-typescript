@@ -8,7 +8,7 @@ import Overlay from './Overlay'
 import Wrapper from './Wrapper'
 
 function Popup({
-  callback = () => {},
+  callback,
 }) {
   // TODO Test Unitaires
   const [visible, setVisible] = useState(true)
@@ -41,11 +41,10 @@ function Popup({
       {content}
     </FadeOut>
   )
-
 }
 
 Popup.propTypes = {
-  callback: PropTypes.func,
+  callback: PropTypes.func.isRequired,
 }
 
 export default memo(Popup)
