@@ -1,1 +1,5 @@
-[]
+{
+  "app.containers.NotFoundPage.header": "This is the NotFoundPage container!",
+
+  "app.pages.Folder": "This is the Folder page!"
+}
