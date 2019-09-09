@@ -20,20 +20,24 @@ import Popup from '../index'
 describe('<Popup />', () => {
   it('Expect to not log errors in console', () => {
     const spy = jest.spyOn(global.console, 'error')
+    const callback = () => {}
+
     render(
       <ThemeProvider theme={Theme}>
-        <Popup />
+        <Popup callback={callback} />
       </ThemeProvider>,
     )
     expect(spy).not.toHaveBeenCalled()
   })
 
   it('Should render and match the snapshot', () => {
+    const callback = () => {}
+
     const {
       container: { firstChild },
     } = render(
       <ThemeProvider theme={Theme}>
-        <Popup />
+        <Popup callback={callback} />
       </ThemeProvider>,
     )
     expect(firstChild).toMatchSnapshot()
