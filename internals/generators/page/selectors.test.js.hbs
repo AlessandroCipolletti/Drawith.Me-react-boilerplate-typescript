@@ -1,7 +1,21 @@
-// import { select{{ properCase name }}Domain } from '../selectors'
+import { select{{ properCase name }}Domain, makeSelect{{ properCase name }}Key } from '../selectors'
 
-describe('select{{ properCase name }}Domain', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false)
+describe('{{ properCase name }} Selectors', () => {
+  it('select{{ properCase name }}Domain should select the global page state', () => {
+    const {{ camelCase name }}State = {}
+    const mockedState = {
+      {{ camelCase name }}: {{ camelCase name }}State,
+    }
+
+    expect(select{{ properCase name }}Domain(mockedState)).toEqual({{ camelCase name }}State)
+  })
+
+  it('makeSelect{{ properCase name }}Key should select the {{ camelCase name }}.key state', () => {
+    const {{ camelCase name }}State = {
+      key: 'value',
+    }
+    const keySelector = makeSelect{{ properCase name }}Key()
+
+    expect(keySelector({{ camelCase name }}State)).toEqual({{ camelCase name }}State.key)
   })
 })

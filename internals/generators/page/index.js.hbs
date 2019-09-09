@@ -21,7 +21,7 @@ import { useInjectSaga } from 'utils/injectSaga'
 {{/if}}
 {{#if wantActionsAndReducer}}
 import { useInjectReducer } from 'utils/injectReducer'
-import makeSelect{{properCase name}} from './selectors'
+import { makeSelect{{properCase name}}Key } from './selectors'
 import reducer from './reducer'
 {{/if}}
 {{#if wantSaga}}
@@ -47,6 +47,7 @@ export function {{ properCase name }}() {
         <meta name="description" content="Description of {{properCase name}}" />
       </Helmet>
     {{/if}}
+
     {{#if wantMessages}}
       <FormattedMessage {...messages.header} />
     {{/if}}
@@ -60,7 +61,7 @@ export function {{ properCase name }}() {
 
 {{#if wantActionsAndReducer}}
 const mapStateToProps = createStructuredSelector({
-  {{ camelCase name }}: makeSelect{{properCase name}}(),
+  {{ camelCase name }}Key: makeSelect{{properCase name}}Key(),
 })
 {{/if}}
 

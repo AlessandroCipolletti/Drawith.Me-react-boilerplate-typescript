@@ -4,8 +4,13 @@ import { initialState } from './reducer'
 const select{{ properCase name }}Domain = state => state.{{ camelCase name }} || initialState
 
 
-const makeSelect{{ properCase name }} = () =>
-  createSelector(select{{ properCase name }}Domain, substate => substate)
+const makeSelect{{ properCase name }}Key = () =>
+  createSelector(
+    select{{ properCase name }}Domain,
+    {{ camelCase name }}State => {{ camelCase name }}State.key,
+  )
 
-export default makeSelect{{ properCase name }}
-export { select{{ properCase name }}Domain }
+export {
+  select{{ properCase name }}Domain,
+  makeSelect{{ properCase name }}Key,
+}
