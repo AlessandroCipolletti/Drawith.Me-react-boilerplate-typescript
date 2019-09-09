@@ -30,28 +30,34 @@ describe('<{{ properCase name }} />', () => {
   const history = createMemoryHistory()
   const store = configureStore({}, history)
 
-  it('Expect to not log errors in console', () => {
-    const spy = jest.spyOn(global.console, 'error')
-    const dispatch = jest.fn()
 {{#if wantMessages}}
+  const renderComponent = (props = {}) =>
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
         <Provider store={store}>
           <ThemeProvider theme={Theme}>
-            <{{ properCase name }} dispatch={dispatch} />
+            <{{ properCase name }} {...props} />
           </ThemeProvider>
         </Provider>
       </IntlProvider>,
     )
 {{else}}
+  const renderComponent = (props = {}) =>
     render(
       <Provider store={store}>
         <ThemeProvider theme={Theme}>
-          <{{ properCase name }} dispatch={dispatch} />
+          <{{ properCase name }} {...props} />
         </ThemeProvider>
       </Provider>,
     )
 {{/if}}
+
+  it('Expect to not log errors in console', () => {
+    const spy = jest.spyOn(global.console, 'error')
+    const dispatch = jest.fn()
+
+    renderComponent({ dispatch })
+
     expect(spy).not.toHaveBeenCalled()
   })
 
@@ -65,29 +71,10 @@ describe('<{{ properCase name }} />', () => {
    * @see {@link https://jestjs.io/docs/en/api#testskipname-fn}
    */
   it.skip('Should render and match the snapshot', () => {
-{{#if wantMessages}}
     const {
       container: { firstChild },
-    } = render(
-      <IntlProvider locale={DEFAULT_LOCALE}>
-        <Provider store={store}>
-          <ThemeProvider theme={Theme}>
-            <{{ properCase name }} />
-          </ThemeProvider>
-        </Provider>
-      </IntlProvider>,
-    )
-{{else}}
-    const {
-      container: { firstChild },
-    } = render(
-      <Provider store={store}>
-        <ThemeProvider theme={Theme}>
-          <{{ properCase name }} />
-        </ThemeProvider>
-      </Provider>,
-    )
-{{/if}}
+    } = renderComponent()
+    
     expect(firstChild).toMatchSnapshot()
   })
 })

@@ -23,23 +23,27 @@ import { DEFAULT_LOCALE } from '../../../utils/i18n'
 {{/if}}
 
 describe('<{{ properCase name }} />', () => {
-  it('Expect to not log errors in console', () => {
-    const spy = jest.spyOn(global.console, 'error')
 {{#if wantMessages}}
+  const renderComponent = (props = {}) =>
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
         <ThemeProvider theme={Theme}>
-          <{{ properCase name }} />
+          <{{ properCase name }} {...props} />
         </ThemeProvider>
       </IntlProvider>,
     )
 {{else}}
+  const renderComponent = (props = {}) =>
     render(
       <ThemeProvider theme={Theme}>
-        <{{ properCase name }} />
+        <{{ properCase name }} {...props} />
       </ThemeProvider>,
     )
 {{/if}}
+
+  it('Expect to not log errors in console', () => {
+    const spy = jest.spyOn(global.console, 'error')
+    renderComponent()
     expect(spy).not.toHaveBeenCalled()
   })
 
@@ -53,25 +57,9 @@ describe('<{{ properCase name }} />', () => {
    * @see {@link https://jestjs.io/docs/en/api#testskipname-fn}
    */
   it.skip('Should render and match the snapshot', () => {
-{{#if wantMessages}}
     const {
       container: { firstChild },
-    } = render(
-      <IntlProvider locale={DEFAULT_LOCALE}>
-        <ThemeProvider theme={Theme}>
-          <{{ properCase name }} />
-        </ThemeProvider>
-      </IntlProvider>,
-    )
-{{else}}
-    const {
-      container: { firstChild },
-    } = render(
-      <ThemeProvider theme={Theme}>
-        <{{ properCase name }} />
-      </ThemeProvider>,
-    )
-{{/if}}
+    } = renderComponent()
     expect(firstChild).toMatchSnapshot()
   })
 })
