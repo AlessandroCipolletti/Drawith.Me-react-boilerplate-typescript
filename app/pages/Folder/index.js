@@ -11,7 +11,7 @@ import { useInjectReducer } from 'utils/injectReducer'
 
 import Popup from 'components/Popup'
 
-import makeSelectFolder from './selectors'
+import { makeSelectFolderKey } from './selectors'
 import reducer from './reducer'
 import saga from './saga'
 import messages from './messages'
@@ -33,7 +33,7 @@ export function Folder() {
         <meta name="description" content="Description of Folder" />
       </Helmet>
       <FormattedMessage {...messages.header} />
-      
+
       {showPopup && <Popup
         callback={hidePopup}
       />}
@@ -44,7 +44,7 @@ export function Folder() {
 Folder.propTypes = {}
 
 const mapStateToProps = createStructuredSelector({
-  folder: makeSelectFolder(),
+  folderKey: makeSelectFolderKey(),
 })
 
 function mapDispatchToProps() {

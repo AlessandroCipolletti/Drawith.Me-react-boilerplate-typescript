@@ -8,6 +8,7 @@ describe('folderReducer', () => {
   beforeEach(() => {
     state = {
       // default state params here
+      key: 'value',
     }
   })
 
