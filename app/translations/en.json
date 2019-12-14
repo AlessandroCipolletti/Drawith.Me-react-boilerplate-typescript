@@ -1,4 +1,8 @@
 {
+  "app.containers.PageContainer.appName": "Drawith.Me",
+  "app.containers.PageContainer.appDescription": "Share your creativity on the world",
+
+  "app.containers.NotFoundPage.pageName": "Folder",
   "app.containers.NotFoundPage.header": "This is the NotFoundPage container!",
 
   "app.pages.Folder": "This is the Folder page!"

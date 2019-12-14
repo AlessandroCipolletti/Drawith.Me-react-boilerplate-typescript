@@ -9,10 +9,9 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 import { Provider } from 'react-redux'
-import { IntlProvider } from 'react-intl'
-// import 'jest-dom/extend-expect' // add some helpful assertions
+import { IntlProvider, injectIntl } from 'react-intl'
+import { compose } from 'redux'
 
-// Import de Theme Provider
 import { ThemeProvider } from 'styled-components'
 import Theme from 'common/theme'
 
@@ -25,39 +24,33 @@ import { DEFAULT_LOCALE } from '../../../utils/i18n'
 describe('<Folder />', () => {
   const store = configureStore({}, history)
 
-  it('Expect to not log errors in console', () => {
-    const spy = jest.spyOn(global.console, 'error')
-    const dispatch = jest.fn()
+  const ComponentWithIntl = compose(injectIntl)(Folder)
 
+  const renderComponent = (props = {}) =>
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
         <Provider store={store}>
           <ThemeProvider theme={Theme}>
-            <Folder dispatch={dispatch} />
+            <ComponentWithIntl {...props} />
           </ThemeProvider>
         </Provider>
       </IntlProvider>,
     )
+
+  it('Expect to not log errors in console', () => {
+    const spy = jest.spyOn(global.console, 'error')
+    const dispatch = jest.fn()
+
+    renderComponent({ dispatch })
+
     expect(spy).not.toHaveBeenCalled()
   })
 
-  /**
-   * Unskip this test to use it
-   *
-   * @see {@link https://jestjs.io/docs/en/api#testskipname-fn}
-   */
   it.skip('Should render and match the snapshot', () => {
     const {
       container: { firstChild },
-    } = render(
-      <IntlProvider locale={DEFAULT_LOCALE}>
-        <Provider store={store}>
-          <ThemeProvider theme={Theme}>
-            <Folder />
-          </ThemeProvider>
-        </Provider>
-      </IntlProvider>,
-    )
+    } = renderComponent()
+
     expect(firstChild).toMatchSnapshot()
   })
 })

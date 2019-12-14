@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Helmet } from 'react-helmet'
-import { FormattedMessage } from 'react-intl'
 import { createStructuredSelector } from 'reselect'
 import { compose } from 'redux'
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
 
 import { useInjectSaga } from 'utils/injectSaga'
 import { useInjectReducer } from 'utils/injectReducer'
 
+import PageContainer from 'containers/PageContainer'
 import Popup from 'common/components/Popup'
 
 import { makeSelectFolderKey } from './selectors'
@@ -16,7 +16,9 @@ import reducer from './reducer'
 import saga from './saga'
 import messages from './messages'
 
-export function Folder() {
+export function Folder({
+  intl,
+}) {
   useInjectReducer({ key: 'folder', reducer })
   useInjectSaga({ key: 'folder', saga })
 
@@ -27,11 +29,7 @@ export function Folder() {
   }
 
   return (
-    <div>
-      <Helmet>
-        <title>Folder</title>
-        <meta name="description" content="Description of Folder" />
-      </Helmet>
+    <PageContainer name={intl.formatMessage(messages.pageName)} >
       <FormattedMessage {...messages.header} />
 
       {showPopup && <Popup
@@ -39,11 +37,13 @@ export function Folder() {
       >
         CIAO CIAO
       </Popup>}
-    </div>
+    </PageContainer>
   )
 }
 
-Folder.propTypes = {}
+Folder.propTypes = {
+  intl: intlShape.isRequired,
+}
 
 const mapStateToProps = createStructuredSelector({
   folderKey: makeSelectFolderKey(),
@@ -58,4 +58,7 @@ const withConnect = connect(
   mapDispatchToProps,
 )
 
-export default compose(withConnect)(Folder)
+export default compose(
+  withConnect,
+  injectIntl,
+)(Folder)
