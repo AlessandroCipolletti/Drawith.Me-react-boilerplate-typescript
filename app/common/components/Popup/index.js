@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 
 import { FadeIn, FadeOut } from 'animate-css-styled-components'
@@ -8,36 +8,35 @@ import Overlay from './Overlay'
 import Wrapper from './Wrapper'
 
 function Popup({
-  callback,
+  callback, children,
 }) {
-  // TODO Test Unitaires
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = React.useState(true)
 
   const close = () => {
     if (visible) {
       setVisible(false)
-      setTimeout(callback, parseFloat(Theme.timing.fadeAnimation) * 1000)
+      setTimeout(callback, Theme.timing.fadeAnimation.ms)
     }
   }
 
   const content = (
-    <Overlay onClick={close}>
+    <Overlay onClick={close} data-testid="overlay">
       <Wrapper>
-        CONTENT
+        {children}
       </Wrapper>
     </Overlay>
   )
 
   if (visible) {
     return (
-      <FadeIn duration={Theme.timing.fadeAnimation}>
+      <FadeIn duration={Theme.timing.fadeAnimation.string}>
         {content}
       </FadeIn>
     )
   }
 
   return (
-    <FadeOut duration={Theme.timing.fadeAnimation}>
+    <FadeOut duration={Theme.timing.fadeAnimation.string}>
       {content}
     </FadeOut>
   )
@@ -45,6 +44,7 @@ function Popup({
 
 Popup.propTypes = {
   callback: PropTypes.func.isRequired,
+  children: PropTypes.any.isRequired,
 }
 
 export default memo(Popup)

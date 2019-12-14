@@ -1,5 +1,5 @@
-import * as Colors from './colors'
-import { parseColorHexToRgbaString } from './utils'
+import * as Colors from 'common/colors'
+import { parseColorHexToRgbaString } from 'common/utils'
 
 const spacingUnit = 16
 
@@ -39,10 +39,13 @@ const Theme = {
     size11: `4.5rem`, // 72px
   },
   UIColors: {
-    overlayBackgroundColor: parseColorHexToRgbaString(Colors.gray[6], 0.5),
+    overlayBackgroundColor: parseColorHexToRgbaString(Colors.gray[0], 0.9),
   },
   timing: {
-    fadeAnimation: '0.25s',
+    fadeAnimation: {
+      string: '0.25s',
+      ms: 250,
+    },
   },
 }
 

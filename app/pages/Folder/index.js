@@ -9,7 +9,7 @@ import { compose } from 'redux'
 import { useInjectSaga } from 'utils/injectSaga'
 import { useInjectReducer } from 'utils/injectReducer'
 
-import Popup from 'components/Popup'
+import Popup from 'common/components/Popup'
 
 import { makeSelectFolderKey } from './selectors'
 import reducer from './reducer'
@@ -36,7 +36,9 @@ export function Folder() {
 
       {showPopup && <Popup
         callback={hidePopup}
-      />}
+      >
+        CIAO CIAO
+      </Popup>}
     </div>
   )
 }
