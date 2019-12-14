@@ -7,7 +7,7 @@
 const fs = require('fs')
 const path = require('path')
 const appComponents = fs.readdirSync(
-  path.join(__dirname, '../../../app/components'),
+  path.join(__dirname, '../../../app/common/components'),
 )
 const appContainers = fs.readdirSync(
   path.join(__dirname, '../../../app/containers'),

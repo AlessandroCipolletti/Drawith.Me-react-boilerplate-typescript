@@ -13,7 +13,6 @@ import { createMemoryHistory } from 'history'
 {{#if wantMessages}}
 import { IntlProvider } from 'react-intl'
 {{/if}}
-// import 'jest-dom/extend-expect' // add some helpful assertions
 
 // Import de Theme Provider
 import { ThemeProvider } from 'styled-components'
@@ -31,12 +30,13 @@ describe('<{{ properCase name }} />', () => {
   const store = configureStore({}, history)
 
 {{#if wantMessages}}
+  const ComponentWithIntl = compose(injectIntl)({{ properCase name }})
   const renderComponent = (props = {}) =>
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
         <Provider store={store}>
           <ThemeProvider theme={Theme}>
-            <{{ properCase name }} {...props} />
+            <ComponentWithIntl {...props} />
           </ThemeProvider>
         </Provider>
       </IntlProvider>,
@@ -65,11 +65,6 @@ describe('<{{ properCase name }} />', () => {
     expect(true).toEqual(false)
   })
 
-  /**
-   * Unskip this test to use it
-   *
-   * @see {@link https://jestjs.io/docs/en/api#testskipname-fn}
-   */
   it.skip('Should render and match the snapshot', () => {
     const {
       container: { firstChild },
