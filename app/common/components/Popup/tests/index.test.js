@@ -63,11 +63,13 @@ describe('<Popup />', () => {
     expect(firstChild).toMatchSnapshot()
   })
 
-  it('Should prevent multiple calls of callback', async () => {
+  it('Should prevent multiple calls of close callback', async () => {
     const callback = jest.fn()
 
     const { container } = renderComponent({ callback })
     const overlay = getByTestId(container, 'overlay')
+    fireEvent.click(overlay)
+    fireEvent.click(overlay)
     fireEvent.click(overlay)
     await new Promise((resolve) => setTimeout(resolve, Theme.timing.fadeAnimation.ms * 1.5))
 
