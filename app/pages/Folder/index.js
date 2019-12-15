@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
@@ -9,7 +9,6 @@ import { useInjectSaga } from 'utils/injectSaga'
 import { useInjectReducer } from 'utils/injectReducer'
 
 import PageContainer from 'containers/PageContainer'
-import Popup from 'common/components/Popup'
 
 import { makeSelectFolderKey } from './selectors'
 import reducer from './reducer'
@@ -22,21 +21,11 @@ export function Folder({
   useInjectReducer({ key: 'folder', reducer })
   useInjectSaga({ key: 'folder', saga })
 
-  const [showPopup, setShowPopup] = useState(true)
-
-  const hidePopup = () => {
-    setShowPopup(false)
-  }
-
   return (
-    <PageContainer name={intl.formatMessage(messages.pageName)} >
+    <PageContainer
+      name={intl.formatMessage(messages.pageName)}
+    >
       <FormattedMessage {...messages.header} />
-
-      {showPopup && <Popup
-        callback={hidePopup}
-      >
-        CIAO CIAO
-      </Popup>}
     </PageContainer>
   )
 }
