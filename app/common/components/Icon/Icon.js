@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Theme from 'common/theme'
+import Theme from 'common/Theme'
 
 const DEFAULT_ICON_SIZE = Theme.spacing.size4
 const DEFAULT_ICON_COLOR = Theme.palette.gray[0]

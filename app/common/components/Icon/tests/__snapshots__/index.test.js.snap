@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icon /> Should render and match the snapshot with good props name, size, color 1`] = `
+<div
+  class="Icon__Wrapper-xawg7a-0 foIEEr"
+  color="#ff4500"
+  role="button"
+  size="24"
+  tabindex="0"
+/>
+`;
+
+exports[`<Icon /> Should render and match the snapshot with prop disabled = true 1`] = `
+<div
+  class="Icon__Wrapper-xawg7a-0 eYPaTa"
+  color="#22252a"
+  disabled=""
+  role="button"
+  size="16"
+  tabindex="0"
+/>
+`;
