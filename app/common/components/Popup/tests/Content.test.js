@@ -1,6 +1,6 @@
 /**
  *
- * Tests for Popup
+ * Tests for Content
  *
  * @see https://github.com/react-boilerplate/react-boilerplate/tree/master/docs/testing
  *
@@ -13,15 +13,15 @@ import { render } from 'react-testing-library'
 import { ThemeProvider } from 'styled-components'
 import Theme from 'common/Theme'
 
-import { Wrapper } from '../styled'
+import { Content } from '../styled'
 
-describe('<Wrapper />', () => {
+describe('<Content />', () => {
   const renderComponent = (props = {}) =>
     render(
       <ThemeProvider theme={Theme}>
-        <Wrapper {...props}>
+        <Content {...props}>
           Content
-        </Wrapper>
+        </Content>
       </ThemeProvider>,
     )
 
@@ -46,5 +46,3 @@ describe('<Wrapper />', () => {
     expect(container.querySelector('a[attribute="test"]')).toBeNull()
   })
 })
-
-// StyledComponentTest(Wrapper, 'Wrapper', 'div')

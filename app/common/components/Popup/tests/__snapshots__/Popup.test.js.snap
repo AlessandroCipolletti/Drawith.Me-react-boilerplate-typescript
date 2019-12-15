@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Popup /> Should re-render et match the shapshot for hiding after calling setVisible(false) 1`] = `
+<DocumentFragment>
+  <div
+    class="styled__Overlay-sc-1l7if20-0 fPnXsl"
+    data-testid="overlay"
+    data-visible="false"
+  >
+    <div
+      class="Shake-e77na9-0 iHCLPl"
+    >
+      <div
+        class="Shadows__SoftShadow-sc-1xiu5e5-2 styled__Wrapper-sc-1l7if20-1 lalxsh"
+      >
+        Content
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Popup /> Should render and match the snapshot with default props 1`] = `
+<div
+  class="styled__Overlay-sc-1l7if20-0 eamVnv"
+  data-testid="overlay"
+  data-visible="true"
+>
+  <div
+    class="Shake-e77na9-0 iHCLPl"
+  >
+    <div
+      class="Shadows__SoftShadow-sc-1xiu5e5-2 styled__Wrapper-sc-1l7if20-1 lalxsh"
+    >
+      Content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Popup /> Should render and match the snapshot with showClose = false 1`] = `
+<div
+  class="styled__Overlay-sc-1l7if20-0 eamVnv"
+  data-testid="overlay"
+  data-visible="true"
+>
+  <div
+    class="Shake-e77na9-0 iHCLPl"
+  >
+    <div
+      class="Shadows__SoftShadow-sc-1xiu5e5-2 styled__Wrapper-sc-1l7if20-1 lalxsh"
+    >
+      Content
+    </div>
+  </div>
+</div>
+`;

@@ -1,6 +1,6 @@
 /**
  *
- * Tests for Popup
+ * Tests for Header.Title
  *
  * @see https://github.com/react-boilerplate/react-boilerplate/tree/master/docs/testing
  *
@@ -13,32 +13,32 @@ import { render } from 'react-testing-library'
 import { ThemeProvider } from 'styled-components'
 import Theme from 'common/Theme'
 
-import { Wrapper } from '../styled'
+import { Header } from '../styled'
 
-describe('<Wrapper />', () => {
+describe('<Header.Title />', () => {
   const renderComponent = (props = {}) =>
     render(
       <ThemeProvider theme={Theme}>
-        <Wrapper {...props}>
+        <Header.Title {...props}>
           Content
-        </Wrapper>
+        </Header.Title>
       </ThemeProvider>,
     )
 
-  it('should render an <div> tag', () => {
+  it('should render an <span> tag', () => {
     const { container } = renderComponent()
-    expect(container.querySelector('div')).not.toBeNull()
+    expect(container.querySelector('span')).not.toBeNull()
   })
 
   it('should have a class attribute', () => {
     const { container } = renderComponent()
-    expect(container.querySelector('div').hasAttribute('class')).toBe(true)
+    expect(container.querySelector('span').hasAttribute('class')).toBe(true)
   })
 
   it('should adopt a valid attribute', () => {
     const id = 'test'
     const { container } = renderComponent({ id })
-    expect(container.querySelector('div').id).toEqual(id)
+    expect(container.querySelector('span').id).toEqual(id)
   })
 
   it('should not adopt an invalid attribute', () => {
@@ -46,5 +46,3 @@ describe('<Wrapper />', () => {
     expect(container.querySelector('a[attribute="test"]')).toBeNull()
   })
 })
-
-// StyledComponentTest(Wrapper, 'Wrapper', 'div')

@@ -1,6 +1,6 @@
 /**
  *
- * Tests for Popup
+ * Tests for CloseButton
  *
  * @see https://github.com/react-boilerplate/react-boilerplate/tree/master/docs/testing
  *
@@ -15,13 +15,13 @@ import Theme from 'common/Theme'
 
 import { Wrapper } from '../styled'
 
-describe('<Wrapper />', () => {
+describe('<Wrapper.CloseButton />', () => {
   const renderComponent = (props = {}) =>
     render(
       <ThemeProvider theme={Theme}>
-        <Wrapper {...props}>
+        <Wrapper.CloseButton {...props}>
           Content
-        </Wrapper>
+        </Wrapper.CloseButton>
       </ThemeProvider>,
     )
 
@@ -46,5 +46,3 @@ describe('<Wrapper />', () => {
     expect(container.querySelector('a[attribute="test"]')).toBeNull()
   })
 })
-
-// StyledComponentTest(Wrapper, 'Wrapper', 'div')
