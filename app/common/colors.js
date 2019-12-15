@@ -1,5 +1,5 @@
 export const gray = {
-  0: '#22252a',
+  0: '#22252a',  // dark
   1: '#353a3f',
   2: '#4a5056',
   3: '#878e95',
@@ -8,7 +8,7 @@ export const gray = {
   6: '#dfe2e6',
   7: '#e9ecef',
   8: '#f1f3f5',
-  9: '#f8f9fa',
+  9: '#f8f9fa',  // light
 }
 
 export const orange = {
