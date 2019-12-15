@@ -20,11 +20,12 @@ function Popup({
   }
 
   const content = (
-    <Overlay onClick={close} data-testid="overlay">
+    <>
+      <Overlay onClick={close} data-testid="overlay" />
       <Wrapper>
         {children}
       </Wrapper>
-    </Overlay>
+    </>
   )
 
   if (visible) {

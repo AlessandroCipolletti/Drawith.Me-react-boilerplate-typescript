@@ -21,6 +21,8 @@ export const orange = {
   6: '#ffb599',  // light
 }
 
+export const primary = orange
+
 export const red = {
   0: '#5a1e1b',  // dark
   1: '#7d2621',
