@@ -8,7 +8,7 @@ import { AppHeader } from '../styled'
 const InfoButton = ({
   action,
 }) => (
-  <AppHeader.Button float='right' >
+  <AppHeader.Button float='right'>
     <Icon
       name='info'
       size={Theme.spacing.size6}

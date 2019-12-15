@@ -5,11 +5,11 @@ import Shake from 'common/styled/Shake'
 import Theme from 'common/Theme'
 
 import Icon from 'common/components/Icon'
-import { Overlay, Wrapper } from './styled'
+import { Overlay, Wrapper, Header, Content } from './styled'
 
-function PopupV2({
+const Popup = ({
   callback, children, showClose = false, allowClose = true,
-}) {
+}) => {
   const [visible, setVisible] = React.useState(false)
   const [isShaking, setIsShaking] = React.useState(false)
   const overlayEl = React.useRef(null)
@@ -60,11 +60,14 @@ function PopupV2({
   )
 }
 
-PopupV2.propTypes = {
+Popup.propTypes = {
   callback: PropTypes.func.isRequired,
   children: PropTypes.any,
   showClose: PropTypes.bool,
   allowClose: PropTypes.bool,
 }
 
-export default memo(PopupV2)
+Popup.Header = Header
+Popup.Content = Content
+
+export default memo(Popup)
