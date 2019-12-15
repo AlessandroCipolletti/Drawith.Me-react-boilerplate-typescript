@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 
 import { FadeIn, FadeOut } from 'animate-css-styled-components'
-import Theme from 'common/theme'
+import Theme from 'common/Theme'
 
 import Overlay from './Overlay'
 import Wrapper from './Wrapper'

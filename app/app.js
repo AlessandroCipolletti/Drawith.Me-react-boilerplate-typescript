@@ -17,7 +17,7 @@ import LanguageProvider from 'containers/LanguageProvider'
 
 // Import de Theme Provider
 import { ThemeProvider } from 'styled-components'
-import Theme from 'common/theme'
+import Theme from 'common/Theme'
 
 // Load the favicon and the .htaccess file
 /* eslint-disable import/no-unresolved, import/extensions */

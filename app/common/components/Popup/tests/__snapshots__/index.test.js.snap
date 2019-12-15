@@ -8,7 +8,7 @@ exports[`<Popup /> Should re-render et match the shapshot for hiding after calli
     display="block"
   >
     <div
-      class="Overlay-qtskko-0 dqnHJs"
+      class="Overlay-qtskko-0 fTghja"
       data-testid="overlay"
     />
     <div
@@ -27,7 +27,7 @@ exports[`<Popup /> Should render and match the snapshot 1`] = `
   display="block"
 >
   <div
-    class="Overlay-qtskko-0 dqnHJs"
+    class="Overlay-qtskko-0 fTghja"
     data-testid="overlay"
   />
   <div

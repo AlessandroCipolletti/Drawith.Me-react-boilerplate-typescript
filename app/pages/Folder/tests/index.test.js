@@ -13,7 +13,7 @@ import { IntlProvider, injectIntl } from 'react-intl'
 import { compose } from 'redux'
 
 import { ThemeProvider } from 'styled-components'
-import Theme from 'common/theme'
+import Theme from 'common/Theme'
 
 import history from 'utils/history'
 import configureStore from 'utils/configureStore'

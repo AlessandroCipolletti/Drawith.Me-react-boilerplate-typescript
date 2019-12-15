@@ -11,7 +11,7 @@ import { render, fireEvent, getByTestId } from 'react-testing-library'
 
 // Import de Theme Provider
 import { ThemeProvider } from 'styled-components'
-import Theme from 'common/theme'
+import Theme from 'common/Theme'
 
 import Popup from '../index'
 

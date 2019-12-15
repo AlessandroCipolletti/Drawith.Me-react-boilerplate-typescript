@@ -3,7 +3,7 @@ import { render } from 'react-testing-library'
 
 // Import de Theme Provider
 import { ThemeProvider } from 'styled-components'
-import Theme from 'common/theme'
+import Theme from 'common/Theme'
 
 import {
   SharpShadowCss,

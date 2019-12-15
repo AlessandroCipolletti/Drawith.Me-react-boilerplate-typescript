@@ -4,7 +4,7 @@
  *
  */
 
-import Theme from '../theme'
+import Theme from '../Theme'
 
 describe('The Theme', () => {
   it('should contain `palette` key', () => {
