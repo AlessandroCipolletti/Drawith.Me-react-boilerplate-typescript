@@ -7,6 +7,9 @@ const Theme = {
   palette: {
     ...Colors,
   },
+  gradients: {
+    primaryColorLight: `linear-gradient(to left, ${Colors.primary[4]}, ${Colors.primary[3]})`,
+  },
   spacing: {
     size1: `${spacingUnit * 0.25}px`, // 4px
     size2: `${spacingUnit * 0.50}px`, // 8px

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Shake /> Should render and match the snapshot while not shaking 1`] = `
+<div
+  class="Shake-e77na9-0 iHCLPl"
+>
+  Content
+</div>
+`;
+
+exports[`<Shake /> Should render and match the snapshot while shaking 1`] = `
+<div
+  class="Shake-e77na9-0 ebpSXC"
+>
+  Content
+</div>
+`;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Scrollable /> Should render and match the snapshot 1`] = `
+<div
+  class="Scrollable-w0eb6g-0 hruisM"
+>
+  Content
+</div>
+`;

@@ -32,9 +32,14 @@ describe('The Theme', () => {
     expect(hasTimig).toBe(true)
   })
 
-  it('should not contain other keys than `palette` `spacing` `fontSizing` `UIColors` `timing`', () => {
+  it('should contain `gradients` key', () => {
+    const hasGradient = typeof Theme.gradients !== 'undefined'
+    expect(hasGradient).toBe(true)
+  })
+
+  it('should not contain other keys than `palette` `spacing` `fontSizing` `UIColors` `timing`, `gradients`', () => {
     const themeKeys = Object.keys(Theme)
 
-    expect(themeKeys.length).toBe(5)
+    expect(themeKeys.length).toBe(6)
   })
 })

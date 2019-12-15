@@ -1,7 +1,7 @@
 module.exports = {
   collectCoverageFrom: [
     'app/**/*.{js,jsx}',
-    '!app/common/TU/StyledComponentTest.js',
+    '!app/common/TU/*.{js,jsx}',
     '!app/**/*.test.{js,jsx}',
     '!app/*/RbGenerated*/*.{js,jsx}',
     '!app/app.js',

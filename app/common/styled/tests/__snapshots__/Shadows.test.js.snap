@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DiffuseShadow /> Should render and match the snapshot 1`] = `
+<div
+  class="Shadows__DiffuseShadow-sc-1xiu5e5-1 fwpJOJ"
+>
+  Content
+</div>
+`;
+
+exports[`<LongerShadow /> Should render and match the snapshot 1`] = `
+<div
+  class="Shadows__LongerShadow-sc-1xiu5e5-4 daknFo"
+>
+  Content
+</div>
+`;
+
+exports[`<SharpShadow /> Should render and match the snapshot 1`] = `
+<div
+  class="Shadows__SharpShadow-sc-1xiu5e5-0 dbPLDy"
+>
+  Content
+</div>
+`;
+
+exports[`<ShorterShadow /> Should render and match the snapshot 1`] = `
+<div
+  class="Shadows__ShorterShadow-sc-1xiu5e5-3 leWVNE"
+>
+  Content
+</div>
+`;
+
+exports[`<SoftShadow /> Should render and match the snapshot 1`] = `
+<div
+  class="Shadows__SoftShadow-sc-1xiu5e5-2 kjEc"
+>
+  Content
+</div>
+`;
