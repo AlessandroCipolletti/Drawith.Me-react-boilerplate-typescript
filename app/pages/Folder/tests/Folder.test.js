@@ -18,7 +18,7 @@ import Theme from 'common/Theme'
 import history from 'utils/history'
 import configureStore from 'utils/configureStore'
 
-import { Folder } from '../index'
+import { Folder } from '../Folder'
 import { DEFAULT_LOCALE } from '../../../utils/i18n'
 
 describe('<Folder />', () => {

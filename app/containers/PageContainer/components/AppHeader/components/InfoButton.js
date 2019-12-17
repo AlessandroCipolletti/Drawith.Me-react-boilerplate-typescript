@@ -8,11 +8,13 @@ import { HeaderButton } from '../styled'
 const InfoButton = ({
   action,
 }) => (
-  <HeaderButton float='right'>
+  <HeaderButton
+    float='right'
+    onClick={action}
+  >
     <Icon
       name='info'
       size={Theme.spacing.size6}
-      onClick={action}
     />
   </HeaderButton>
 )

@@ -48,7 +48,7 @@ const Wrapper = styled.div`
   width: ${props => `${props.size  }px`};
   height: ${props => `${props.size  }px`};
   user-select: none;
-  cursor: ${props => props.clickable ? 'pointer' : 'auto'};
+  cursor: ${props => props.clickable ? 'pointer' : 'inherit'};
   opacity: ${props => props.disabled ? 0.5 : 1};
   background-image: url(${props => props.icon});
   background-size: ${props => `${props.size - 4  }px`} ${props => `${props.size - 4  }px`};

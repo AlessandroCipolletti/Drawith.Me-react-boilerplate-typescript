@@ -27,9 +27,7 @@ const StyledComponentTest = (Component, componentName, componentTag) => {
 
     it('should have a class attribute', () => {
       const { container } = renderComponent()
-      expect(container.querySelector(componentTag).hasAttribute('class')).toBe(
-        true,
-      )
+      expect(container.querySelector(componentTag).hasAttribute('class')).toBe(true)
     })
 
     it('should adopt a valid attribute', () => {

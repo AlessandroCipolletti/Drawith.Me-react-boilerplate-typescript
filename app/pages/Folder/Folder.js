@@ -21,9 +21,19 @@ export function Folder({
   useInjectReducer({ key: 'folder', reducer })
   useInjectSaga({ key: 'folder', saga })
 
+  const headerButtons = [
+    // {
+    //   id:'info-btn',
+    //   icon: 'info',
+    //   float: 'left',
+    //   action: ()=>{},
+    // }
+  ]
+
   return (
     <PageContainer
       name={intl.formatMessage(messages.pageName)}
+      headerButtons={headerButtons}
     >
       <FormattedMessage {...messages.header} />
     </PageContainer>

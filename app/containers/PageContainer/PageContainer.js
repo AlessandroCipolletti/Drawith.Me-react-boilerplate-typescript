@@ -7,9 +7,7 @@ import { injectIntl, intlShape } from 'react-intl'
 import messages from './messages'
 
 import { Wrapper, PageContent } from './styled'
-// import { InfoPopup, AppHeader } from './components'
-import InfoPopup from './components/InfoPopup'
-import AppHeader from './components/AppHeader'
+import { InfoPopup, AppHeader } from './components'
 
 const PageContainer = ({
   name, headerButtons = [], children, intl,

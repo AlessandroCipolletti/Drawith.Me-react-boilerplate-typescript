@@ -1,8 +1,7 @@
-// export InfoButton from './InfoButton'
-// export InfoPopup from './InfoPopup'
+import InfoPopup from './InfoPopup'
+import AppHeader from './AppHeader'
 
-// import InfoButton from './InfoButton'
-// import InfoPopup from './InfoPopup'
-//
-// export InfoButton
-// export InfoPopup
+export {
+  InfoPopup,
+  AppHeader,
+}
