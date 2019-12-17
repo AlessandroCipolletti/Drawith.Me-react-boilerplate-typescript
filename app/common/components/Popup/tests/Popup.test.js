@@ -75,6 +75,30 @@ describe('<Popup />', () => {
     expect(firstChild).toMatchSnapshot()
   })
 
+  it('Should render and match the snapshot with showClose = true but allowClose = false', () => {
+    const callback = () => {}
+    const showClose = true
+    const allowClose = false
+
+    const {
+      container: { firstChild },
+    } = renderComponent({ callback, showClose, allowClose })
+
+    expect(firstChild).toMatchSnapshot()
+  })
+
+  it('Should render and match the snapshot with showClose = true and allowClose = true', () => {
+    const callback = () => {}
+    const showClose = true
+    const allowClose = true
+
+    const {
+      container: { firstChild },
+    } = renderComponent({ callback, showClose, allowClose })
+
+    expect(firstChild).toMatchSnapshot()
+  })
+
   it('Should re-render et match the shapshot for hiding after calling setVisible(false)', () => {
     const callback = () => {}
     const allowClose = true

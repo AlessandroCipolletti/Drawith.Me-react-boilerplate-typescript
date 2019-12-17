@@ -55,3 +55,50 @@ exports[`<Popup /> Should render and match the snapshot with showClose = false 1
   </div>
 </div>
 `;
+
+exports[`<Popup /> Should render and match the snapshot with showClose = true and allowClose = true 1`] = `
+<div
+  class="styled__Overlay-sc-1l7if20-0 eamVnv"
+  data-testid="overlay"
+  data-visible="true"
+>
+  <div
+    class="Shake-e77na9-0 iHCLPl"
+  >
+    <div
+      class="Shadows__SoftShadow-sc-1xiu5e5-2 styled__Wrapper-sc-1l7if20-1 lalxsh"
+    >
+      Content
+      <div
+        class="styled__CloseButton-sc-1l7if20-2 dtMEFB"
+      >
+        <div
+          class="Icon__Wrapper-xawg7a-0 blXfhs"
+          color="#f8f9fa"
+          role="button"
+          size="24"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Popup /> Should render and match the snapshot with showClose = true but allowClose = false 1`] = `
+<div
+  class="styled__Overlay-sc-1l7if20-0 eamVnv"
+  data-testid="overlay"
+  data-visible="true"
+>
+  <div
+    class="Shake-e77na9-0 iHCLPl"
+  >
+    <div
+      class="Shadows__SoftShadow-sc-1xiu5e5-2 styled__Wrapper-sc-1l7if20-1 lalxsh"
+    >
+      Content
+    </div>
+  </div>
+</div>
+`;
