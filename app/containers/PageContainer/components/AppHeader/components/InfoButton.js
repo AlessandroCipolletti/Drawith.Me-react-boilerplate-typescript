@@ -3,18 +3,18 @@ import PropTypes from 'prop-types'
 import Theme from 'common/Theme'
 
 import Icon from 'common/components/Icon'
-import { AppHeader } from '../styled'
+import { HeaderButton } from '../styled'
 
 const InfoButton = ({
   action,
 }) => (
-  <AppHeader.Button float='right'>
+  <HeaderButton float='right'>
     <Icon
       name='info'
       size={Theme.spacing.size6}
       onClick={action}
     />
-  </AppHeader.Button>
+  </HeaderButton>
 )
 
 InfoButton.propTypes = {

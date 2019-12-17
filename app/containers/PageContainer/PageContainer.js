@@ -6,10 +6,10 @@ import { injectIntl, intlShape } from 'react-intl'
 
 import messages from './messages'
 
-import { Wrapper, AppHeader, PageContent } from './styled'
-// import { InfoButton, InfoPopup } from './components'
-import InfoButton from './components/InfoButton'
+import { Wrapper, PageContent } from './styled'
+// import { InfoPopup, AppHeader } from './components'
 import InfoPopup from './components/InfoPopup'
+import AppHeader from './components/AppHeader'
 
 const PageContainer = ({
   name, headerButtons = [], children, intl,
@@ -30,17 +30,10 @@ const PageContainer = ({
       </Helmet>
       {infoPopupVisible && <InfoPopup callback={hideInfoPopup} />}
       <Wrapper>
-        <AppHeader>
-          {headerButtons.map(button => (
-            <AppHeader.Button
-              {...button}
-              onClick={button.action}
-            >
-              {button.text || ''}
-            </AppHeader.Button>
-          ))}
-          <InfoButton action={showInfoPopup} />
-        </AppHeader>
+        <AppHeader
+          headerButtons={headerButtons}
+          showInfoPopup={showInfoPopup}
+        />
         <PageContent>
           {children}
         </PageContent>
