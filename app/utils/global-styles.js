@@ -1,10 +1,15 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
+  * {
+    user-select: none;
+  }
+  
   html,
   body {
     height: 100%;
     width: 100%;
+    font-size: 16px;
   }
 
   body {
