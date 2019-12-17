@@ -23,7 +23,7 @@ const PageContainer = ({
   return (
     <div>
       <Helmet>
-        <title>{name} - {intl.formatMessage(messages.appName)}</title>
+        <title>{`${name}`} - {intl.formatMessage(messages.appName)}</title>
         <meta name="description" content={intl.formatMessage(messages.appDescription)} />
       </Helmet>
       {infoPopupVisible && <InfoPopup callback={hideInfoPopup} />}

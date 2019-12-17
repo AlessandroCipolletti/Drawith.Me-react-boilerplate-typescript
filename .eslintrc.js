@@ -67,6 +67,7 @@ module.exports = {
     'no-confusing-arrow': 0,
     'no-console': 1,
     'no-unused-vars': 2,
+    'import/order': 1,
     'no-use-before-define': 0,
     'prefer-template': 2,
     'react/destructuring-assignment': 0,

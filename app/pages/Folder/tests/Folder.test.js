@@ -9,23 +9,25 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 import { Provider } from 'react-redux'
+
+// Import de Intl Provider
 import { IntlProvider, injectIntl } from 'react-intl'
 import { compose } from 'redux'
 
+// Import de Theme Provider
 import { ThemeProvider } from 'styled-components'
 import Theme from 'common/Theme'
 
 import history from 'utils/history'
 import configureStore from 'utils/configureStore'
+import { DEFAULT_LOCALE } from '../../../utils/i18n'
 
 import { Folder } from '../Folder'
-import { DEFAULT_LOCALE } from '../../../utils/i18n'
 
 describe('<Folder />', () => {
   const store = configureStore({}, history)
 
   const ComponentWithIntl = compose(injectIntl)(Folder)
-
   const renderComponent = (props = {}) =>
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>

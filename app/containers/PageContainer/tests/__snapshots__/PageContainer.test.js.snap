@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageContainer /> Should render and match the snapshot with default props 1`] = `
+<div>
+  <div
+    class="styled__Wrapper-lvdcr6-0 jJmZCw"
+  >
+    <div
+      class="styled__Wrapper-sc-1a6eih8-0 jXWNUQ"
+    >
+      <div
+        class="styled__HeaderButton-sc-1a6eih8-1 fTDkle"
+      >
+        <div
+          class="Icon__Wrapper-xawg7a-0 hKOtws"
+          color="#22252a"
+          role="button"
+          size="32"
+          tabindex="0"
+        />
+      </div>
+    </div>
+    <div
+      class="styled__PageContent-lvdcr6-1 fptcef"
+    >
+      Content
+    </div>
+  </div>
+</div>
+`;

@@ -1,19 +1,29 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
+// Import de Intl Provider
+import { IntlProvider, injectIntl } from 'react-intl'
+import { compose } from 'redux'
+
 // Import de Theme Provider
 import { ThemeProvider } from 'styled-components'
 import Theme from 'common/Theme'
+import { DEFAULT_LOCALE } from '../../../utils/i18n'
 
-import AppHeader from '../AppHeader'
+import PageContainer from '../PageContainer'
 
-describe('<AppHeader />', () => {
+describe('<PageContainer />', () => {
 
+  const ComponentWithIntl = compose(injectIntl)(PageContainer)
   const renderComponent = (props = {}) => (
     render(
-      <ThemeProvider theme={Theme}>
-        <AppHeader {...props} />
-      </ThemeProvider>,
+      <IntlProvider locale={DEFAULT_LOCALE}>
+        <ThemeProvider theme={Theme}>
+          <ComponentWithIntl {...props}>
+            Content
+          </ComponentWithIntl>
+        </ThemeProvider>
+      </IntlProvider>,
     )
   )
 
@@ -23,33 +33,33 @@ describe('<AppHeader />', () => {
 
   it('Expect to not log errors in console', () => {
     const spy = jest.spyOn(global.console, 'error')
-    const showInfoPopup = () => {}
+    const name = 'name'
 
-    renderComponent({ showInfoPopup })
+    renderComponent({ name })
 
     expect(spy).not.toHaveBeenCalled()
   })
 
-  it('Expect log an error in console if called without action prop', () => {
+  it('Expect log an error in console if called without name prop', () => {
     const spy = jest.spyOn(global.console, 'error')
 
     renderComponent()
 
-    expect(spy).toHaveBeenCalledTimes(2)
+    expect(spy).toHaveBeenCalledTimes(1)
   })
 
   it('Should render and match the snapshot with default props', () => {
-    const showInfoPopup = () => {}
+    const name = 'name'
 
     const {
       container: { firstChild },
-    } = renderComponent({ showInfoPopup })
+    } = renderComponent({ name })
 
     expect(firstChild).toMatchSnapshot()
   })
 
-  it('Should render with the right amount of HeaderButtons', () => {
-    const showInfoPopup = () => {}
+  it('Should render with the right amount of HeaderButton', () => {
+    const name = 'name'
     const headerButtons = [{
       id: '0',
       icon: 'info',
@@ -60,7 +70,7 @@ describe('<AppHeader />', () => {
       action: ()=>{},
     }]
 
-    const { container } = renderComponent({ showInfoPopup, headerButtons })
+    const { container } = renderComponent({ name, headerButtons })
     const buttonsLength = container.querySelectorAll('.HeaderButton').length
 
     expect(buttonsLength).toBe(headerButtons.length)
