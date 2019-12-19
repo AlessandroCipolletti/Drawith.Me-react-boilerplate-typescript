@@ -1,10 +1,18 @@
 import { createGlobalStyle } from 'styled-components'
 
+import setFireToTheRain from 'fonts/setFireToTheRain.ttf'
+
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "setFireToTheRain";
+    src: url(${setFireToTheRain});
+  }
+
   * {
     user-select: none;
+    font-family: "setFireToTheRain";
   }
-  
+
   html,
   body {
     height: 100%;
