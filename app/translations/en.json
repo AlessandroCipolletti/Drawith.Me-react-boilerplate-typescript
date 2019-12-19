@@ -5,5 +5,10 @@
   "app.containers.NotFoundPage.pageName": "Folder",
   "app.containers.NotFoundPage.header": "This is the NotFoundPage container!",
 
+  "app.componenets.InfoPopup.title": "Share your creativity",
+  "app.componenets.InfoPopup.description_line_1": "Crearted by",
+  "app.componenets.InfoPopup.description_line_2": "Alessandro Cipolletti",
+  "app.componenets.InfoPopup.description_line_3": "cipolletti.alessandro@gmail.com",
+
   "app.pages.Folder": "This is the Folder page!"
 }

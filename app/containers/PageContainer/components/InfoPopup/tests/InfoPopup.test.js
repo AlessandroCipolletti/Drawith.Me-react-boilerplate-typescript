@@ -10,18 +10,16 @@ import { ThemeProvider } from 'styled-components'
 import Theme from 'common/Theme'
 import { DEFAULT_LOCALE } from 'utils/i18n'
 
-import PageContainer from '../PageContainer'
+import InfoPopup from '../InfoPopup'
 
-describe('<PageContainer />', () => {
+describe('<InfoPopup />', () => {
 
-  const ComponentWithIntl = compose(injectIntl)(PageContainer)
+  const ComponentWithIntl = compose(injectIntl)(InfoPopup)
   const renderComponent = (props = {}) => (
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
         <ThemeProvider theme={Theme}>
-          <ComponentWithIntl {...props}>
-            Content
-          </ComponentWithIntl>
+          <ComponentWithIntl {...props} />
         </ThemeProvider>
       </IntlProvider>,
     )
@@ -33,47 +31,28 @@ describe('<PageContainer />', () => {
 
   it('Expect to not log errors in console', () => {
     const spy = jest.spyOn(global.console, 'error')
-    const name = 'name'
+    const callback = () => {}
 
-    renderComponent({ name })
+    renderComponent({ callback })
 
     expect(spy).not.toHaveBeenCalled()
   })
 
-  it('Expect log an error in console if called without name prop', () => {
+  it('Expect log an error in console if called without callback prop', () => {
     const spy = jest.spyOn(global.console, 'error')
 
     renderComponent()
 
-    expect(spy).toHaveBeenCalledTimes(1)
+    expect(spy).toHaveBeenCalledTimes(2)
   })
 
   it('Should render and match the snapshot with default props', () => {
-    const name = 'name'
+    const callback = () => {}
 
     const {
       container: { firstChild },
-    } = renderComponent({ name })
+    } = renderComponent({ callback })
 
     expect(firstChild).toMatchSnapshot()
   })
-
-  it('Should render with the right amount of HeaderButton', () => {
-    const name = 'name'
-    const headerButtons = [{
-      id: '0',
-      icon: 'info',
-      action: ()=>{},
-    }, {
-      id: '1',
-      text: 'text',
-      action: ()=>{},
-    }]
-
-    const { container } = renderComponent({ name, headerButtons })
-    const buttonsLength = container.querySelectorAll('.HeaderButton').length
-
-    expect(buttonsLength).toBe(headerButtons.length)
-  })
-
 })

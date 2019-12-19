@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     user-select: none;
-    font-family: "setFireToTheRain";
+    font-family: "setFireToTheRain", sans-serif;
   }
 
   html,

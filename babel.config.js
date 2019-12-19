@@ -23,6 +23,8 @@ module.exports = {
           containers: './app/containers/',
           pages: './app/pages/',
           images: './app/images/',
+          fonts: './app/fonts',
+          utils: './app/utils',
         },
       },
     ],
