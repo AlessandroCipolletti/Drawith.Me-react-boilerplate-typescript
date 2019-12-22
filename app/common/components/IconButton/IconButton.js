@@ -43,4 +43,5 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
   padding: 6px;
   cursor: ${props => props.disabled ? 'auto' : 'pointer' };
+  opacity: ${props => props.disabled ? 0.6 : 1 };
 `

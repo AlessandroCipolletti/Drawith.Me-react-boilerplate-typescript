@@ -40,4 +40,26 @@ describe('<TextButton />', () => {
 
     expect(style.cursor).toBe('auto')
   })
+
+  it('Should get right opacity css depending on "disabled" prop = false', () => {
+    const disabled = false
+
+    const {
+      container: { firstChild },
+    } = renderComponent({ disabled })
+    const style = window.getComputedStyle(firstChild)
+
+    expect(parseFloat(style.opacity)).toBe(1)
+  })
+
+  it('Should get right opacity css depending on "disabled" prop = true', () => {
+    const disabled = true
+
+    const {
+      container: { firstChild },
+    } = renderComponent({ disabled })
+    const style = window.getComputedStyle(firstChild)
+
+    expect(parseFloat(style.opacity)).toBeLessThan(1)
+  })
 })
