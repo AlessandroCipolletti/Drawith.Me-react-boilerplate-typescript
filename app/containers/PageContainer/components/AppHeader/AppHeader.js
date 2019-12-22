@@ -2,29 +2,44 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Theme from 'common/Theme'
 
-import Icon from 'common/components/Icon'
-import { Wrapper, HeaderButton } from './styled'
-import { InfoButton } from './components'
+import IconButton from 'common/components/IconButton'
+import TextButton from 'common/styled/TextButton'
+import { Wrapper } from './styled'
 
 const AppHeader = ({
   headerButtons = [], showInfoPopup,
 }) => (
   <Wrapper>
     {headerButtons.map(button => (
-      <HeaderButton
-        key={button.id}
-        float={button.float}
-        onClick={button.action}
-        className='HeaderButton'
-      >
-        {button.icon && <Icon
-          name={button.icon}
-          size={Theme.spacing.size6}
-        />}
-        {button.text || ''}
-      </HeaderButton>
+      <>
+        {button.icon && (
+          <IconButton
+            key={button.id}
+            float={button.float}
+            onClick={button.action}
+            color={Theme.palette.white}
+            icon={button.icon}
+          />
+        )}
+        {button.text && (
+          <TextButton
+            key={button.id}
+            float={button.float}
+            onClick={button.action}
+            color={Theme.palette.blue[4]}
+            data-testid="TextButton"
+          >
+            {button.text}
+          </TextButton>
+        )}
+      </>
     ))}
-    <InfoButton action={showInfoPopup} />
+    <IconButton
+      float='right'
+      color={Theme.palette.white}
+      onClick={showInfoPopup}
+      icon='info'
+    />
   </Wrapper>
 )
 

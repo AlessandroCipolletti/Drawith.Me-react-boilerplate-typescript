@@ -42,7 +42,7 @@ const Theme = {
     size11: `4.5rem`, // 72px
   },
   UIColors: {
-    overlayBackgroundColor: parseColorHexToRgbaString(Colors.primary[6], 0.4),
+    overlayBackgroundColor: parseColorHexToRgbaString(Colors.blue[3], 0.3),
   },
   timing: {
     fadeAnimation: {

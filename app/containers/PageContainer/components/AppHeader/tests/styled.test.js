@@ -1,5 +1,4 @@
 import StyledComponentTest from 'common/TU/StyledComponentTest'
-import { Wrapper, HeaderButton } from '../styled'
+import { Wrapper } from '../styled'
 
 StyledComponentTest(Wrapper, 'Wrapper', 'div')
-StyledComponentTest(HeaderButton, 'HeaderButton', 'div')

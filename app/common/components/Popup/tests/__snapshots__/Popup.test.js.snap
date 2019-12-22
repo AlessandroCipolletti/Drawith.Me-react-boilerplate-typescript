@@ -3,7 +3,7 @@
 exports[`<Popup /> Should re-render et match the shapshot for hiding after calling setVisible(false) 1`] = `
 <DocumentFragment>
   <div
-    class="styled__Overlay-sc-1l7if20-0 fPnXsl"
+    class="styled__Overlay-sc-1l7if20-0 idMvQZ"
     data-testid="overlay"
     data-visible="false"
   >
@@ -22,7 +22,7 @@ exports[`<Popup /> Should re-render et match the shapshot for hiding after calli
 
 exports[`<Popup /> Should render and match the snapshot with default props 1`] = `
 <div
-  class="styled__Overlay-sc-1l7if20-0 eamVnv"
+  class="styled__Overlay-sc-1l7if20-0 knSwPr"
   data-testid="overlay"
   data-visible="true"
 >
@@ -40,7 +40,7 @@ exports[`<Popup /> Should render and match the snapshot with default props 1`] =
 
 exports[`<Popup /> Should render and match the snapshot with showClose = false 1`] = `
 <div
-  class="styled__Overlay-sc-1l7if20-0 eamVnv"
+  class="styled__Overlay-sc-1l7if20-0 knSwPr"
   data-testid="overlay"
   data-visible="true"
 >
@@ -58,7 +58,7 @@ exports[`<Popup /> Should render and match the snapshot with showClose = false 1
 
 exports[`<Popup /> Should render and match the snapshot with showClose = true and allowClose = true 1`] = `
 <div
-  class="styled__Overlay-sc-1l7if20-0 eamVnv"
+  class="styled__Overlay-sc-1l7if20-0 knSwPr"
   data-testid="overlay"
   data-visible="true"
 >
@@ -87,7 +87,7 @@ exports[`<Popup /> Should render and match the snapshot with showClose = true an
 
 exports[`<Popup /> Should render and match the snapshot with showClose = true but allowClose = false 1`] = `
 <div
-  class="styled__Overlay-sc-1l7if20-0 eamVnv"
+  class="styled__Overlay-sc-1l7if20-0 knSwPr"
   data-testid="overlay"
   data-visible="true"
 >

@@ -5,11 +5,12 @@ exports[`<AppHeader /> Should render and match the snapshot with default props 1
   class="styled__Wrapper-sc-1a6eih8-0 jXWNUQ"
 >
   <div
-    class="styled__HeaderButton-sc-1a6eih8-1 fTDkle"
+    class="IconButton__Wrapper-sc-15xi3uz-0 msSbr"
+    data-testid="IconButton"
   >
     <div
       class="Icon__Wrapper-xawg7a-0 hKOtws"
-      color="#22252a"
+      color="#ffffff"
       role="button"
       size="32"
       tabindex="0"

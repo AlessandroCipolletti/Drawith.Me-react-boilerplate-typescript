@@ -3,12 +3,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { compose } from 'redux'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { injectIntl, intlShape } from 'react-intl'
 
 import { useInjectSaga } from 'utils/injectSaga'
 import { useInjectReducer } from 'utils/injectReducer'
 
 import PageContainer from 'containers/PageContainer'
+import TextButton from 'common/styled/TextButton'
+import { Wrapper, Toolbar, Content } from './styled'
 
 import { makeSelectFolderKey } from './selectors'
 import reducer from './reducer'
@@ -35,7 +37,16 @@ export function Folder({
       name={intl.formatMessage(messages.pageName)}
       headerButtons={headerButtons}
     >
-      <FormattedMessage {...messages.header} />
+      <Wrapper>
+        <Toolbar>
+          <TextButton>
+            Select
+          </TextButton>
+        </Toolbar>
+        <Content>
+
+        </Content>
+      </Wrapper>
     </PageContainer>
   )
 }

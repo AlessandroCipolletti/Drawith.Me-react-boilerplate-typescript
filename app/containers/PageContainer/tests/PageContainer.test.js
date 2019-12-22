@@ -58,22 +58,4 @@ describe('<PageContainer />', () => {
     expect(firstChild).toMatchSnapshot()
   })
 
-  it('Should render with the right amount of HeaderButton', () => {
-    const name = 'name'
-    const headerButtons = [{
-      id: '0',
-      icon: 'info',
-      action: ()=>{},
-    }, {
-      id: '1',
-      text: 'text',
-      action: ()=>{},
-    }]
-
-    const { container } = renderComponent({ name, headerButtons })
-    const buttonsLength = container.querySelectorAll('.HeaderButton').length
-
-    expect(buttonsLength).toBe(headerButtons.length)
-  })
-
 })

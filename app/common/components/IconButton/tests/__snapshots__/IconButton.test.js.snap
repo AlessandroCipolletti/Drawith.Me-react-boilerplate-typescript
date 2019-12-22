@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IconButton /> Should render and match the snapshot with default props 1`] = `
+<div
+  class="IconButton__Wrapper-sc-15xi3uz-0 fRpRXe"
+  data-testid="IconButton"
+>
+  <div
+    class="Icon__Wrapper-xawg7a-0 hKOtws"
+    color="#f8f9fa"
+    role="button"
+    size="32"
+    tabindex="0"
+  />
+</div>
+`;

@@ -2,7 +2,7 @@
 
 exports[`<InfoPopup /> Should render and match the snapshot with default props 1`] = `
 <div
-  class="styled__Overlay-sc-1l7if20-0 eamVnv"
+  class="styled__Overlay-sc-1l7if20-0 knSwPr"
   data-testid="overlay"
   data-visible="true"
 >

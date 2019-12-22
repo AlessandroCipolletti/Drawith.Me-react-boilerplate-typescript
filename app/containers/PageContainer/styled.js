@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import HEADER_HEIGHT from './constants'
+import HEADER_HEIGHT from 'common/constants'
 
 export const Wrapper = styled.div`
   position: fixed;

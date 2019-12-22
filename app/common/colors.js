@@ -58,7 +58,7 @@ export const blue = {
   1: '#24496e',
   2: '#33689d',
   3: '#4483c2',  // default
-  4: '#6fa1d3',
+  4: '#007AFF',
   5: '#b1d3f2',
   6: '#f0f8fe',  // light
 }
