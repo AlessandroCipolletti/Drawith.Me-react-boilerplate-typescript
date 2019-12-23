@@ -5,12 +5,16 @@ export const initialState = {
   key: 'value',
 }
 
-/* eslint-disable default-case, no-param-reassign */
+/* eslint-disable default-case, no-param-reassign, consistent-return */
 const {{ camelCase name }}Reducer = (state = initialState, action) =>
-  produce(state, (/* draft */) => {
+  produce(state, draft) => {
     switch (action.type) {
       case DEFAULT_ACTION:
+        draft.key = 'newValue'
         break
+
+      default:
+        return draft
     }
   })
 

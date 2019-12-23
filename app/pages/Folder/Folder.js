@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 import { compose } from 'redux'
@@ -12,16 +12,30 @@ import PageContainer from 'containers/PageContainer'
 import TextButton from 'common/styled/TextButton'
 import { Wrapper, Toolbar, Content } from './styled'
 
-import { makeSelectFolderKey } from './selectors'
+import {
+  makeSelectFolderDrawings,
+  makeSelectFolderLoading,
+} from './selectors'
+import {
+  requestLocalDrawingsAction,
+} from './actions'
 import reducer from './reducer'
 import saga from './saga'
 import messages from './messages'
 
 export function Folder({
-  intl,
+  intl, drawings, isLoading,
+  requestLocalDrawings,
 }) {
   useInjectReducer({ key: 'folder', reducer })
   useInjectSaga({ key: 'folder', saga })
+
+  React.useEffect(() => {
+    requestLocalDrawings()
+  }, [])
+
+  console.log({ drawings })
+  console.log({ isLoading })
 
   const headerButtons = [
     // {
@@ -40,7 +54,7 @@ export function Folder({
       <Wrapper>
         <Toolbar>
           <TextButton>
-            Select
+            {intl.formatMessage(messages.select)}
           </TextButton>
         </Toolbar>
         <Content>
@@ -53,14 +67,20 @@ export function Folder({
 
 Folder.propTypes = {
   intl: intlShape.isRequired,
+  drawings: PropTypes.array.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  requestLocalDrawings: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = createStructuredSelector({
-  folderKey: makeSelectFolderKey(),
+export const mapStateToProps = createStructuredSelector({
+  drawings: makeSelectFolderDrawings(),
+  isLoading: makeSelectFolderLoading(),
 })
 
-function mapDispatchToProps() {
-  return {}
+export function mapDispatchToProps(dispatch) {
+  return {
+    requestLocalDrawings: () => dispatch(requestLocalDrawingsAction()),
+  }
 }
 
 const withConnect = connect(

@@ -3,13 +3,20 @@ import { initialState } from './reducer'
 
 const selectFolderDomain = state => state.folder || initialState
 
-const makeSelectFolderKey = () =>
+const makeSelectFolderDrawings = () =>
   createSelector(
     selectFolderDomain,
-    folderState => folderState.key,
+    folderState => folderState.drawings,
+  )
+
+const makeSelectFolderLoading = () =>
+  createSelector(
+    selectFolderDomain,
+    folderState => folderState.isLoading,
   )
 
 export {
   selectFolderDomain,
-  makeSelectFolderKey,
+  makeSelectFolderDrawings,
+  makeSelectFolderLoading,
 }

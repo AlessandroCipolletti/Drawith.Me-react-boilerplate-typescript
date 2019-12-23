@@ -10,5 +10,6 @@
   "app.componenets.InfoPopup.description_line_2": "Alessandro Cipolletti",
   "app.componenets.InfoPopup.description_line_3": "cipolletti.alessandro@gmail.com",
 
-  "app.pages.Folder": "This is the Folder page!"
+  "app.pages.Folder.pageName": "Folder",
+  "app.pages.Folder.select": "Select"
 }

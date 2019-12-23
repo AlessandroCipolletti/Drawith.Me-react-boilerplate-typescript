@@ -1,13 +1,35 @@
-import { defaultAction } from '../actions'
-import { DEFAULT_ACTION } from '../constants'
+import {
+  requestLocalDrawingsAction,
+  receiveLocalDrawingsAction,
+} from '../actions'
+import {
+  REQUEST_LOCAL_DRAWINGS,
+  RECEIVE_LOCAL_DRAWINGS,
+} from '../constants'
 
 describe('Folder actions', () => {
-  describe('Default Action', () => {
-    it('has a type of DEFAULT_ACTION', () => {
+  describe('Request local drawings Action', () => {
+    it('has a type of REQUEST_LOCAL_DRAWINGS', () => {
       const expected = {
-        type: DEFAULT_ACTION,
+        type: REQUEST_LOCAL_DRAWINGS,
       }
-      expect(defaultAction()).toEqual(expected)
+
+      expect(requestLocalDrawingsAction()).toEqual(expected)
+    })
+  })
+
+  describe('Receive local drawings Action', () => {
+    it('has a type of RECEIVE_LOCAL_DRAWINGS and the given drawings param', () => {
+      const drawings = [{
+        id: 1,
+        data: '123',
+      }]
+      const expected = {
+        type: RECEIVE_LOCAL_DRAWINGS,
+        drawings,
+      }
+
+      expect(receiveLocalDrawingsAction(drawings)).toEqual(expected)
     })
   })
 })

@@ -7,8 +7,8 @@ export default defineMessages({
     id: `${scope}.pageName`,
     defaultMessage: 'Folder',
   },
-  header: {
-    id: `${scope}.header`,
-    defaultMessage: 'This is the Folder page!',
+  select: {
+    id: `${scope}.select`,
+    defaultMessage: 'Select',
   },
 })

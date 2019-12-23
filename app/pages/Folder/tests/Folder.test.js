@@ -8,7 +8,7 @@
 
 import React from 'react'
 import { render } from 'react-testing-library'
-import { Provider } from 'react-redux'
+import { Provider, connect } from 'react-redux'
 
 // Import de Intl Provider
 import { IntlProvider, injectIntl } from 'react-intl'
@@ -22,18 +22,26 @@ import history from 'utils/history'
 import configureStore from 'utils/configureStore'
 import { DEFAULT_LOCALE } from '../../../utils/i18n'
 
-import { Folder } from '../Folder'
+import Folder, { mapStateToProps, mapDispatchToProps } from '../Folder'
 
 describe('<Folder />', () => {
   const store = configureStore({}, history)
 
-  const ComponentWithIntl = compose(injectIntl)(Folder)
+  const withConnect = connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )
+
+  const ComponentWithCompose = compose(
+    withConnect,
+    injectIntl,
+  )(Folder)
   const renderComponent = (props = {}) =>
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
         <Provider store={store}>
           <ThemeProvider theme={Theme}>
-            <ComponentWithIntl {...props} />
+            <ComponentWithCompose {...props} />
           </ThemeProvider>
         </Provider>
       </IntlProvider>,

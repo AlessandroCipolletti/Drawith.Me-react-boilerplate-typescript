@@ -1,4 +1,8 @@
-import { selectFolderDomain, makeSelectFolderKey } from '../selectors'
+import {
+  selectFolderDomain,
+  makeSelectFolderDrawings,
+  makeSelectFolderLoading,
+} from '../selectors'
 
 describe('Folder Selectors', () => {
   it('selectFolderDomain should select the global page state', () => {
@@ -10,12 +14,32 @@ describe('Folder Selectors', () => {
     expect(selectFolderDomain(mockedState)).toEqual(folderState)
   })
 
-  it('makeSelectFolderKey should select the folder.key state', () => {
+  it('makeSelectFolderDrawings should select the folder.drawings state', () => {
     const folderState = {
-      key: 'value',
+      isLoading: false,
+      drawings: [{
+        id: 1,
+        data: '123',
+      }],
     }
-    const keySelector = makeSelectFolderKey()
+    const mockedState = {
+      folder: folderState,
+    }
+    const drawingsSelector = makeSelectFolderDrawings()
 
-    expect(keySelector(folderState)).toEqual(folderState.key)
+    expect(drawingsSelector(mockedState)).toEqual(folderState.drawings)
+  })
+
+  it('makeSelectFolderLoading should select the folder.isLoading state', () => {
+    const folderState = {
+      isLoading: false,
+      drawings: [],
+    }
+    const mockedState = {
+      folder: folderState,
+    }
+    const loadingSelector = makeSelectFolderLoading()
+
+    expect(loadingSelector(mockedState)).toEqual(folderState.isLoading)
   })
 })

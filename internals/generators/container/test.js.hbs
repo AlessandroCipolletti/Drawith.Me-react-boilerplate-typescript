@@ -8,10 +8,10 @@
 
 import React from 'react'
 import { render } from 'react-testing-library'
-import { Provider } from 'react-redux'
+import { Provider, connect } from 'react-redux'
 import { createMemoryHistory } from 'history'
 {{#if wantMessages}}
-import { IntlProvider } from 'react-intl'
+import { IntlProvider, injectIntl } from 'react-intl'
 {{/if}}
 // import 'jest-dom/extend-expect' // add some helpful assertions
 
@@ -21,7 +21,8 @@ import Theme from 'common/Theme'
 
 import configureStore from 'utils/configureStore'
 
-import { {{ properCase name }} } from '../index'
+import {{ properCase name }}, { mapStateToProps, mapDispatchToProps } from '../index'
+
 {{#if wantMessages}}
 import { DEFAULT_LOCALE } from '../../../utils/i18n'
 {{/if}}
@@ -30,23 +31,37 @@ describe('<{{ properCase name }} />', () => {
   const history = createMemoryHistory()
   const store = configureStore({}, history)
 
+  const withConnect = connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )
+
 {{#if wantMessages}}
+  const ComponentWithCompose = compose(
+    withConnect,
+    injectIntl,
+  )({{ properCase name }})
+
   const renderComponent = (props = {}) =>
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
         <Provider store={store}>
           <ThemeProvider theme={Theme}>
-            <{{ properCase name }} {...props} />
+            <ComponentWithCompose {...props} />
           </ThemeProvider>
         </Provider>
       </IntlProvider>,
     )
 {{else}}
+  const ComponentWithCompose = compose(
+    withConnect,
+  )({{ properCase name }})
+
   const renderComponent = (props = {}) =>
     render(
       <Provider store={store}>
         <ThemeProvider theme={Theme}>
-          <{{ properCase name }} {...props} />
+          <ComponentWithCompose {...props} />
         </ThemeProvider>
       </Provider>,
     )
@@ -74,7 +89,7 @@ describe('<{{ properCase name }} />', () => {
     const {
       container: { firstChild },
     } = renderComponent()
-    
+
     expect(firstChild).toMatchSnapshot()
   })
 })

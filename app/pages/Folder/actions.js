@@ -1,7 +1,17 @@
-import { DEFAULT_ACTION } from './constants'
+import {
+  REQUEST_LOCAL_DRAWINGS,
+  RECEIVE_LOCAL_DRAWINGS,
+} from './constants'
 
-export function defaultAction() {
+export function requestLocalDrawingsAction() {
   return {
-    type: DEFAULT_ACTION,
+    type: REQUEST_LOCAL_DRAWINGS,
+  }
+}
+
+export function receiveLocalDrawingsAction(drawings) {
+  return {
+    type: RECEIVE_LOCAL_DRAWINGS,
+    drawings,
   }
 }
