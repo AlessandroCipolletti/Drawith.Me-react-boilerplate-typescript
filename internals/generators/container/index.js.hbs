@@ -53,7 +53,7 @@ export function {{ properCase name }}() {
         <meta name="description" content="Description of {{properCase name}}" />
       </Helmet>
     {{/if}}
-    
+
     {{#if wantMessages}}
       <FormattedMessage {...messages.header} />
     {{/if}}
@@ -66,12 +66,12 @@ export function {{ properCase name }}() {
 }
 
 {{#if wantActionsAndReducer}}
-const mapStateToProps = createStructuredSelector({
+export const mapStateToProps = createStructuredSelector({
   {{ camelCase name }}Key: makeSelect{{properCase name}}Key(),
 })
 {{/if}}
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     dispatch,
   }
