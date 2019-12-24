@@ -8,7 +8,7 @@ import {
 } from '../constants'
 
 describe('Folder actions', () => {
-  describe('Request local drawings Action', () => {
+  describe('Test requestLocalDrawingsAction', () => {
     it('has a type of REQUEST_LOCAL_DRAWINGS', () => {
       const expected = {
         type: REQUEST_LOCAL_DRAWINGS,
@@ -18,7 +18,7 @@ describe('Folder actions', () => {
     })
   })
 
-  describe('Receive local drawings Action', () => {
+  describe('Test receiveLocalDrawingsAction', () => {
     it('has a type of RECEIVE_LOCAL_DRAWINGS and the given drawings param', () => {
       const drawings = [{
         id: 1,

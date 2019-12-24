@@ -11,7 +11,7 @@ const TextButton = styled.div`
   font-family: sans-serif;
   line-height: ${({ theme }) => theme.spacing.size7};
   cursor: ${props => props.disabled ? 'auto' : 'pointer' };
-  opacity: ${props => props.disabled ? 0.6 : 1 };
+  opacity: ${props => props.disabled ? 0.5 : 1 };
 `
 
 export default TextButton

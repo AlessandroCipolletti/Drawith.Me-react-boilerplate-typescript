@@ -53,7 +53,7 @@ export function Folder({
     >
       <Wrapper>
         <Toolbar>
-          <TextButton>
+          <TextButton disabled={!drawings.length}>
             {intl.formatMessage(messages.select)}
           </TextButton>
         </Toolbar>
