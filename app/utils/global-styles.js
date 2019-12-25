@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     user-select: none;
+    outline: none;
     font-family: "setFireToTheRain", sans-serif;
   }
 

@@ -21,11 +21,19 @@ export const Toolbar = styled.div`
 `
 
 export const Content = styled.div`
-  position: absolute;
-  width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
   padding-top: ${HEADER_HEIGHT};
   box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  align-content: flex-start;
+  justify-content: space-around;
+  overflow: auto;
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
 `

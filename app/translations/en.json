@@ -11,5 +11,6 @@
   "app.componenets.InfoPopup.description_line_3": "cipolletti.alessandro@gmail.com",
 
   "app.pages.Carnet.pageName": "Carnet",
-  "app.pages.Carnet.select": "Select"
+  "app.pages.Carnet.select": "Select",
+  "app.pages.Carnet.done": "Done"
 }

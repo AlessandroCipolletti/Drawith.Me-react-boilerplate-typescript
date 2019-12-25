@@ -11,4 +11,8 @@ export default defineMessages({
     id: `${scope}.select`,
     defaultMessage: 'Select',
   },
+  done: {
+    id: `${scope}.done`,
+    defaultMessage: 'Done',
+  },
 })

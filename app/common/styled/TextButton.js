@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
-const TextButton = styled.div`
+const TextButton = styled.button`
   width: auto;
+  min-width: ${({ theme }) => theme.spacing.size9};
   height: ${({ theme }) => theme.spacing.size7};
   float: ${props => props.float || 'left'};
   box-sizing: border-box;
@@ -11,6 +12,8 @@ const TextButton = styled.div`
   font-family: sans-serif;
   line-height: ${({ theme }) => theme.spacing.size7};
   cursor: ${props => props.disabled ? 'auto' : 'pointer' };
+  border: none;
+  background: none;
   opacity: ${props => props.disabled ? 0.5 : 1 };
 `
 

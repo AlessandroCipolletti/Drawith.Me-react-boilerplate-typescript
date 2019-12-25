@@ -10,6 +10,8 @@ import { useInjectReducer } from 'utils/injectReducer'
 
 import PageContainer from 'containers/PageContainer'
 import TextButton from 'common/styled/TextButton'
+import DrawingsPreview from './components/DrawingsPreview'
+import NewDrawing from './components/DrawingsPreview/NewDrawing'
 import { Wrapper, Toolbar, Content } from './styled'
 
 import {
@@ -23,7 +25,7 @@ import reducer from './reducer'
 import saga from './saga'
 import messages from './messages'
 
-export function Carnet({
+function Carnet({
   intl, drawings, isLoading,
   requestLocalDrawings,
 }) {
@@ -33,6 +35,11 @@ export function Carnet({
   React.useEffect(() => {
     requestLocalDrawings()
   }, [])
+
+  const [selectMode, setSelectMode] = React.useState(false)
+  const toggleSelectMode = React.useCallback(() => {
+    setSelectMode(!selectMode)
+  }, [selectMode])
 
   console.log({ isLoading })
 
@@ -52,12 +59,21 @@ export function Carnet({
     >
       <Wrapper>
         <Toolbar>
-          <TextButton disabled={!drawings.length}>
-            {intl.formatMessage(messages.select)}
+          <TextButton disabled={!drawings.length} onClick={toggleSelectMode}>
+            {selectMode ? intl.formatMessage(messages.done) : intl.formatMessage(messages.select) }
           </TextButton>
         </Toolbar>
         <Content>
-
+          <NewDrawing selectMode={selectMode} />
+          {drawings.map(drawing => (
+            <DrawingsPreview
+              key={drawing.id}
+              drawing={drawing.previewPath}
+              selectMode={selectMode}
+              selected={false}
+              draft={false}
+            />
+          ))}
         </Content>
       </Wrapper>
     </PageContainer>
