@@ -2,7 +2,7 @@
   "app.containers.PageContainer.appName": "Drawith.Me",
   "app.containers.PageContainer.appDescription": "Share your creativity on the world",
 
-  "app.containers.NotFoundPage.pageName": "Folder",
+  "app.containers.NotFoundPage.pageName": "Carnet",
   "app.containers.NotFoundPage.header": "This is the NotFoundPage container!",
 
   "app.componenets.InfoPopup.title": "Share your creativity",
@@ -10,6 +10,6 @@
   "app.componenets.InfoPopup.description_line_2": "Alessandro Cipolletti",
   "app.componenets.InfoPopup.description_line_3": "cipolletti.alessandro@gmail.com",
 
-  "app.pages.Folder.pageName": "Folder",
-  "app.pages.Folder.select": "Select"
+  "app.pages.Carnet.pageName": "Carnet",
+  "app.pages.Carnet.select": "Select"
 }

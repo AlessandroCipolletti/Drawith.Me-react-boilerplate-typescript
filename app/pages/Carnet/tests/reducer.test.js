@@ -1,12 +1,12 @@
 import produce from 'immer'
-import folderReducer from '../reducer'
+import carnetReducer from '../reducer'
 import {
   requestLocalDrawingsAction,
   receiveLocalDrawingsAction,
 } from '../actions'
 
 /* eslint-disable default-case, no-param-reassign */
-describe('folderReducer', () => {
+describe('carnetReducer', () => {
   let state
   beforeEach(() => {
     state = {
@@ -18,7 +18,7 @@ describe('folderReducer', () => {
   it('returns the initial state', () => {
     const expectedResult = state
 
-    expect(folderReducer(undefined, {})).toEqual(expectedResult)
+    expect(carnetReducer(undefined, {})).toEqual(expectedResult)
   })
 
   it('should handle the requestLocalDrawingsAction action correctly', () => {
@@ -26,7 +26,7 @@ describe('folderReducer', () => {
       draft.isLoading = true
     })
 
-    expect(folderReducer(state, requestLocalDrawingsAction())).toEqual(expectedResult)
+    expect(carnetReducer(state, requestLocalDrawingsAction())).toEqual(expectedResult)
   })
 
   it('should handle the receiveLocalDrawingsAction action correctly', () => {
@@ -39,6 +39,6 @@ describe('folderReducer', () => {
       draft.drawings = drawings
     })
 
-    expect(folderReducer(state, receiveLocalDrawingsAction(drawings))).toEqual(expectedResult)
+    expect(carnetReducer(state, receiveLocalDrawingsAction(drawings))).toEqual(expectedResult)
   })
 })

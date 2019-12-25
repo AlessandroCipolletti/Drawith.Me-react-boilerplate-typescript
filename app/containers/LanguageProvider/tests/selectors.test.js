@@ -10,7 +10,7 @@ describe('selectLanguage', () => {
     expect(selectLanguage(mockedState)).toEqual(globalState)
   })
 
-  it('makeSelectLocale should select the folder.key state', () => {
+  it('makeSelectLocale should select the locale state', () => {
     const localeState = {
       locale: DEFAULT_LOCALE,
     }

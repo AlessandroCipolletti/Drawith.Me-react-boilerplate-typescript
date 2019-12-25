@@ -13,8 +13,8 @@ import TextButton from 'common/styled/TextButton'
 import { Wrapper, Toolbar, Content } from './styled'
 
 import {
-  makeSelectFolderDrawings,
-  makeSelectFolderLoading,
+  makeSelectCarnetDrawings,
+  makeSelectCarnetLoading,
 } from './selectors'
 import {
   requestLocalDrawingsAction,
@@ -23,18 +23,17 @@ import reducer from './reducer'
 import saga from './saga'
 import messages from './messages'
 
-export function Folder({
+export function Carnet({
   intl, drawings, isLoading,
   requestLocalDrawings,
 }) {
-  useInjectReducer({ key: 'folder', reducer })
-  useInjectSaga({ key: 'folder', saga })
+  useInjectReducer({ key: 'carnet', reducer })
+  useInjectSaga({ key: 'carnet', saga })
 
   React.useEffect(() => {
     requestLocalDrawings()
   }, [])
 
-  console.log({ drawings })
   console.log({ isLoading })
 
   const headerButtons = [
@@ -65,7 +64,7 @@ export function Folder({
   )
 }
 
-Folder.propTypes = {
+Carnet.propTypes = {
   intl: intlShape.isRequired,
   drawings: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
@@ -73,8 +72,8 @@ Folder.propTypes = {
 }
 
 export const mapStateToProps = createStructuredSelector({
-  drawings: makeSelectFolderDrawings(),
-  isLoading: makeSelectFolderLoading(),
+  drawings: makeSelectCarnetDrawings(),
+  isLoading: makeSelectCarnetLoading(),
 })
 
 export function mapDispatchToProps(dispatch) {
@@ -91,4 +90,4 @@ const withConnect = connect(
 export default compose(
   withConnect,
   injectIntl,
-)(Folder)
+)(Carnet)

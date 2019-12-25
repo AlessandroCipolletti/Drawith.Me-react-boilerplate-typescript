@@ -7,7 +7,7 @@ import {
   RECEIVE_LOCAL_DRAWINGS,
 } from '../constants'
 
-describe('Folder actions', () => {
+describe('Carnet actions', () => {
   describe('Test requestLocalDrawingsAction', () => {
     it('has a type of REQUEST_LOCAL_DRAWINGS', () => {
       const expected = {

@@ -10,7 +10,7 @@ export const initialState = {
 }
 
 /* eslint-disable default-case, no-param-reassign, consistent-return */
-const folderReducer = (state = initialState, action) =>
+const carnetReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
       case REQUEST_LOCAL_DRAWINGS:
@@ -27,4 +27,4 @@ const folderReducer = (state = initialState, action) =>
     }
   })
 
-export default folderReducer
+export default carnetReducer

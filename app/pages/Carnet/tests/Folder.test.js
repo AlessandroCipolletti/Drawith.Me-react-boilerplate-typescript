@@ -1,6 +1,6 @@
 /**
  *
- * Tests for Folder
+ * Tests for Carnet
  *
  * @see https://github.com/react-boilerplate/react-boilerplate/tree/master/docs/testing
  *
@@ -22,9 +22,9 @@ import history from 'utils/history'
 import configureStore from 'utils/configureStore'
 import { DEFAULT_LOCALE } from '../../../utils/i18n'
 
-import Folder, { mapStateToProps, mapDispatchToProps } from '../Folder'
+import Carnet, { mapStateToProps, mapDispatchToProps } from '../Carnet'
 
-describe('<Folder />', () => {
+describe('<Carnet />', () => {
   const store = configureStore({}, history)
 
   const withConnect = connect(
@@ -35,7 +35,7 @@ describe('<Folder />', () => {
   const ComponentWithCompose = compose(
     withConnect,
     injectIntl,
-  )(Folder)
+  )(Carnet)
   const renderComponent = (props = {}) =>
     render(
       <IntlProvider locale={DEFAULT_LOCALE}>
