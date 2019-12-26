@@ -1,16 +1,47 @@
+import Config from 'common/Config'
 import styled, { css } from 'styled-components'
 
 import draftIcon from 'images/icons/draft.png'
 import selectIcon from 'images/icons/select.png'
 import paper from 'images/papers/white.png'
 
-export const DrawingCss = css`
+const DrawingCssPhone = css`
+  @media (orientation: landscape) {
+    width: 30vw;
+    height: 35vh;
+  }
+  @media (orientation: portrait) {
+    width: 44vw;
+    height: 16vh;
+  }
+  margin: ${({ theme }) => theme.spacing.size2} 0px;
+`
+
+const DrawingCssTablet = css`
+  @media (orientation: landscape) {
+    width: 20vw;
+    height: 18.5vh;
+  }
+  @media (orientation: portrait) {
+    width: 29vw;
+    height: 15vh;
+  }
+  margin: ${({ theme }) => theme.spacing.size4} 0px;
+`
+
+const DrawingCssDesktop = css`
   width: 18vw;
   height: 21vh;
+  margin: ${({ theme }) => theme.spacing.size4} 0px;
+`
+
+export const DrawingCss = css`
+  ${Config.isDesktop ? DrawingCssDesktop : ''}
+  ${Config.isTablet ? DrawingCssTablet : ''}
+  ${Config.isPhone ? DrawingCssPhone : ''}
   border: solid 1px rgb(220, 220, 220);
   border-radius: ${({ theme }) => theme.spacing.size2};
   box-shadow: inset 0px 0px ${({ theme }) => theme.spacing.size1} 1px rgba(220, 220, 220, 0.5);
-  margin: ${({ theme }) => theme.spacing.size4} 0px;
   cursor: pointer;
 `
 
