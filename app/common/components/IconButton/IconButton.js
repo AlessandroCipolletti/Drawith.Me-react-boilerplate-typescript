@@ -39,6 +39,7 @@ export default IconButton
 export const Wrapper = styled.div`
   width: ${({ theme }) => theme.spacing.size7};
   height: ${({ theme }) => theme.spacing.size7};
+  display: inline-block;
   float: ${props => props.float};
   box-sizing: border-box;
   padding: 6px;

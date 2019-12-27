@@ -3,7 +3,11 @@ import { put, takeEvery } from 'redux-saga/effects' // call
 import db from 'utils/db'
 
 // import { setErrorAction } from 'containers/PageContainer/actions'
-import { REQUEST_LOCAL_DRAWINGS } from './constants'
+import {
+  REQUEST_LOCAL_DRAWINGS,
+  DELETE_SELETED_DRAWINGS,
+  EXPORT_SELETED_DRAWINGS,
+} from './constants'
 
 import { receiveLocalDrawingsAction } from './actions'
 
@@ -33,6 +37,28 @@ export function* requestLocalDrawingsSaga() {
   }
 }
 
+export function* deleteSelectedDrawingsSaga({ ids }) {
+  try {
+    ids.forEach(id => {
+      db.drawings.delete(id)
+    })
+  } catch (err) {
+    // TODO: show error message
+    console.log('db error: DELETE_SELETED_DRAWINGS: ', err)
+  }
+}
+
+export function* exportSelectedDrawingsSaga(/* {ids } */) {
+  try {
+    // TODO export images with proxy
+  } catch (err) {
+    // TODO: show error message
+    console.log('db error: EXPORT_SELETED_DRAWINGS: ', err)
+  }
+}
+
 export default function* FolderPageListeners() {
   yield takeEvery(REQUEST_LOCAL_DRAWINGS, requestLocalDrawingsSaga)
+  yield takeEvery(DELETE_SELETED_DRAWINGS, deleteSelectedDrawingsSaga)
+  yield takeEvery(EXPORT_SELETED_DRAWINGS, exportSelectedDrawingsSaga)
 }
