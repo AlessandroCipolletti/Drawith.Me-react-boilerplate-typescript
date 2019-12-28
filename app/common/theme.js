@@ -1,5 +1,5 @@
 import * as Colors from 'common/colors'
-import { parseColorHexToRgbaString } from 'common/utils'
+import { parseColorHexToRgbaString } from 'common/utils/colors'
 
 const spacingUnit = 16
 

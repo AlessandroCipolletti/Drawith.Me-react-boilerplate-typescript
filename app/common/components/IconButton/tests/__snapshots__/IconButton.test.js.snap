@@ -2,7 +2,7 @@
 
 exports[`<IconButton /> Should render and match the snapshot with default props 1`] = `
 <div
-  class="IconButton__Wrapper-sc-15xi3uz-0 ixFaiP"
+  class="IconButton__Wrapper-sc-15xi3uz-0 jwOWaR"
   data-testid="IconButton"
 >
   <div

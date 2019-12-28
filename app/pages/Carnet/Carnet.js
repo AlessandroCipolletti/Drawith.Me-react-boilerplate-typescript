@@ -24,7 +24,7 @@ import {
   requestLocalDrawingsAction,
   toggleDrawingSelectionAction,
   deleteSelectedDrawingsAction,
-  exportSelectedDrawingsAction,
+  downloadSelectedDrawingsAction,
   deselectAllDrawingsAction,
 } from './actions'
 import reducer from './reducer'
@@ -34,7 +34,7 @@ import messages from './messages'
 function Carnet({
   intl, drawings, isLoading,
   requestLocalDrawings, toggleDrawingSelection, deleteSelectedDrawings,
-  exportSelectedDrawings, deselectAllDrawings,
+  downloadSelectedDrawings, deselectAllDrawings,
 }) {
   useInjectReducer({ key: 'carnet', reducer })
   useInjectSaga({ key: 'carnet', saga })
@@ -79,12 +79,12 @@ function Carnet({
 
   // click handler for delete icon, with current selected drawings ids
   const deleteIconClick = React.useCallback(() => {
-    deleteSelectedDrawings(drawings.filter(d => d.selected).map(d => d.id))
+    deleteSelectedDrawings(drawings.filter(d => d.selected))
   }, [drawings])
 
-  // click handler for export icon, with current selected drawings ids
-  const exportIconClick = React.useCallback(() => {
-    exportSelectedDrawings(drawings.filter(d => d.selected).map(d => d.id))
+  // click handler for download icon, with current selected drawings ids
+  const downloadIconClick = React.useCallback(() => {
+    downloadSelectedDrawings(drawings.filter(d => d.selected))
   }, [drawings])
 
   const headerButtons = [
@@ -116,8 +116,8 @@ function Carnet({
           />
           <IconButton
             color={Theme.palette.gray[9]}
-            onClick={exportIconClick}
-            icon='export'
+            onClick={downloadIconClick}
+            icon='download'
             disabled={actionButtonsEnabled}
           />
         </Toolbar>
@@ -147,7 +147,7 @@ Carnet.propTypes = {
   requestLocalDrawings: PropTypes.func.isRequired,
   toggleDrawingSelection: PropTypes.func.isRequired,
   deleteSelectedDrawings: PropTypes.func.isRequired,
-  exportSelectedDrawings: PropTypes.func.isRequired,
+  downloadSelectedDrawings: PropTypes.func.isRequired,
   deselectAllDrawings: PropTypes.func.isRequired,
 }
 
@@ -160,8 +160,8 @@ export function mapDispatchToProps(dispatch) {
   return {
     requestLocalDrawings: () => dispatch(requestLocalDrawingsAction()),
     toggleDrawingSelection: (id) => dispatch(toggleDrawingSelectionAction(id)),
-    deleteSelectedDrawings: (ids) => dispatch(deleteSelectedDrawingsAction(ids)),
-    exportSelectedDrawings: (ids) => dispatch(exportSelectedDrawingsAction(ids)),
+    deleteSelectedDrawings: (drawings) => dispatch(deleteSelectedDrawingsAction(drawings)),
+    downloadSelectedDrawings: (drawings) => dispatch(downloadSelectedDrawingsAction(drawings)),
     deselectAllDrawings: () => dispatch(deselectAllDrawingsAction()),
   }
 }

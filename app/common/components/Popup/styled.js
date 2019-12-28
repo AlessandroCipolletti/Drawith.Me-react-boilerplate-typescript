@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { parseColorHexToRgbaString } from 'common/utils/'
+import { parseColorHexToRgbaString } from 'common/utils/colors'
 
 import { SoftShadow } from 'common/styled/Shadows'
 

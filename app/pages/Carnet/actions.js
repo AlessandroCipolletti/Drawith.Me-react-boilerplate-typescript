@@ -4,7 +4,7 @@ import {
   TOGGLE_DRAWING_SELECTION,
   DESELECT_ALL_DRAWINGS,
   DELETE_SELETED_DRAWINGS,
-  EXPORT_SELETED_DRAWINGS,
+  DOWNLOAD_SELETED_DRAWINGS,
 } from './constants'
 
 export function requestLocalDrawingsAction() {
@@ -33,16 +33,16 @@ export function deselectAllDrawingsAction() {
   }
 }
 
-export function deleteSelectedDrawingsAction(ids) {
+export function deleteSelectedDrawingsAction(drawings) {
   return {
     type: DELETE_SELETED_DRAWINGS,
-    ids,
+    drawings,
   }
 }
 
-export function exportSelectedDrawingsAction(ids) {
+export function downloadSelectedDrawingsAction(drawings) {
   return {
-    type: EXPORT_SELETED_DRAWINGS,
-    ids,
+    type: DOWNLOAD_SELETED_DRAWINGS,
+    drawings,
   }
 }

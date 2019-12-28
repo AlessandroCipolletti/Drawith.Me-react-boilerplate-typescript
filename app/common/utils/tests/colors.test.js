@@ -1,12 +1,12 @@
 /**
  *
- * Tests for Common Utils
+ * Tests for colors Utils
  *
  */
 
-import * as Utils from '..'
+import * as colorsUtils from '../colors'
 
-describe('Common Utils', () => {
+describe('colorsUtils', () => {
   it('parseColorRgbStringToRgba should work with a rgb string', () => {
     const rgbStringColor = 'rgb(0, 11, 222)'
     const expectedResult = {
@@ -16,7 +16,7 @@ describe('Common Utils', () => {
       a: 1,
     }
 
-    const retult = Utils.parseColorRgbStringToRgba(rgbStringColor)
+    const retult = colorsUtils.parseColorRgbStringToRgba(rgbStringColor)
 
     expect(retult).toEqual(expectedResult)
   })
@@ -30,7 +30,7 @@ describe('Common Utils', () => {
       a: 0.3,
     }
 
-    const retult = Utils.parseColorRgbStringToRgba(rgbaStringColor)
+    const retult = colorsUtils.parseColorRgbStringToRgba(rgbaStringColor)
 
     expect(retult).toEqual(expectedResult)
   })
@@ -43,7 +43,7 @@ describe('Common Utils', () => {
       b: 239,
     }
 
-    const retult = Utils.parseColorHexToRgb(hexString)
+    const retult = colorsUtils.parseColorHexToRgb(hexString)
 
     expect(retult).toEqual(expectedResult)
   })
@@ -56,7 +56,7 @@ describe('Common Utils', () => {
       b: 239,
     }
 
-    const retult = Utils.parseColorHexToRgb(hexColor)
+    const retult = colorsUtils.parseColorHexToRgb(hexColor)
 
     expect(retult).toEqual(expectedResult)
   })
@@ -67,7 +67,7 @@ describe('Common Utils', () => {
     const b = 239
     const expectedResult = '#abcdef'
 
-    const retult = Utils.parseColorRgbToHex(r, g, b)
+    const retult = colorsUtils.parseColorRgbToHex(r, g, b)
 
     expect(retult).toEqual(expectedResult)
   })
@@ -76,7 +76,7 @@ describe('Common Utils', () => {
     const hexColor = '#abcdef'
     const expectedResult = 'rgba(171, 205, 239, 1)'
 
-    const retult = Utils.parseColorHexToRgbaString(hexColor)
+    const retult = colorsUtils.parseColorHexToRgbaString(hexColor)
 
     expect(retult).toEqual(expectedResult)
   })
@@ -86,7 +86,7 @@ describe('Common Utils', () => {
     const alpha = 0.3
     const expectedResult = 'rgba(171, 205, 239, 0.3)'
 
-    const retult = Utils.parseColorHexToRgbaString(hexColor, alpha)
+    const retult = colorsUtils.parseColorHexToRgbaString(hexColor, alpha)
 
     expect(retult).toEqual(expectedResult)
   })

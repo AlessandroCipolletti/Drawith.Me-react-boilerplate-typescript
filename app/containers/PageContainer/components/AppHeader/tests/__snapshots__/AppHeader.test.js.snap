@@ -5,7 +5,7 @@ exports[`<AppHeader /> Should render and match the snapshot with default props 1
   class="styled__Wrapper-sc-1a6eih8-0 jXWNUQ"
 >
   <div
-    class="IconButton__Wrapper-sc-15xi3uz-0 fctjIu"
+    class="IconButton__Wrapper-sc-15xi3uz-0 ekHTzY"
     data-testid="IconButton"
   >
     <div

@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import Theme from 'common/Theme'
 import TextButton from '../TextButton'
 
-StyledComponentTest(TextButton, 'TextButton', 'div')
+StyledComponentTest(TextButton, 'TextButton', 'button')
 
 describe('<TextButton />', () => {
   const renderComponent = (props = {}) =>
