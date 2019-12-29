@@ -1,6 +1,10 @@
 /* eslint-disable no-multi-assign */
 
 export const downloadImage = (url, title = 'image') => {
+  if (!url) {
+    throw new Error("downloadImage needs an url")
+  }
+
   let anchor = document.createElement('a')
   let canvas = document.createElement('canvas')
   let context = canvas.getContext("2d")
