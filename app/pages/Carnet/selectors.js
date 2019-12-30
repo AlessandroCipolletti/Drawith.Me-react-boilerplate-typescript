@@ -1,22 +1,16 @@
 import { createSelector } from 'reselect'
 import { initialState } from './reducer'
 
-const selectCarnetDomain = state => state.carnet || initialState
+export const selectCarnetDomain = state => state.carnet || initialState
 
-const makeSelectCarnetDrawings = () =>
+export const makeSelectCarnetDrawings = () =>
   createSelector(
     selectCarnetDomain,
     carnetState => carnetState.drawings,
   )
 
-const makeSelectCarnetLoading = () =>
+export const makeSelectCarnetLoading = () =>
   createSelector(
     selectCarnetDomain,
     carnetState => carnetState.isLoading,
   )
-
-export {
-  selectCarnetDomain,
-  makeSelectCarnetDrawings,
-  makeSelectCarnetLoading,
-}

@@ -46,7 +46,6 @@ function Carnet({
 
   // action buttons state
   const [selectMode, setSelectMode] = React.useState(false)
-  const [actionButtonsEnabled, setActionButtonsEnabled] = React.useState(true)
   const toggleSelectMode = React.useCallback(() => {
     setSelectMode(!selectMode)
   }, [selectMode])
@@ -55,9 +54,6 @@ function Carnet({
   React.useEffect(() => {
     if (!drawings.length) {
       setSelectMode(false)
-      setActionButtonsEnabled(true)
-    } else {
-      setActionButtonsEnabled(drawings.filter(d => d.selected).length === 0)
     }
   }, [drawings])
 
@@ -112,13 +108,13 @@ function Carnet({
             color={Theme.palette.gray[9]}
             onClick={deleteIconClick}
             icon='delete'
-            disabled={actionButtonsEnabled}
+            disabled={drawings.filter(d => d.selected).length === 0}
           />
           <IconButton
             color={Theme.palette.gray[9]}
             onClick={downloadIconClick}
             icon='download'
-            disabled={actionButtonsEnabled}
+            disabled={drawings.filter(d => d.selected).length !== 1}
           />
         </Toolbar>
         <Content>

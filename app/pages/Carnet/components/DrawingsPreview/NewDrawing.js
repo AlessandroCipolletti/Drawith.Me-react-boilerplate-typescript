@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 import newImg from 'images/UI/Carnet/new.png'
 import paper from 'images/papers/white.png'
 import { DrawingCss } from './styled'

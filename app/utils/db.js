@@ -1,7 +1,9 @@
 import Dexie from 'dexie'
-// /* eslint-disable no-unused-vars */
-// import setGlobalVars from 'indexeddbshim'
-// setGlobalVars()
+
+if (!window.indexedDB) {
+  Dexie.dependencies.indexedDB = require('fake-indexeddb') // eslint-disable-line global-require
+  Dexie.dependencies.IDBKeyRange = require('fake-indexeddb/lib/FDBKeyRange') // eslint-disable-line global-require
+}
 
 const db = new Dexie('DrawithMe.drawings')
 db.version(1).stores({

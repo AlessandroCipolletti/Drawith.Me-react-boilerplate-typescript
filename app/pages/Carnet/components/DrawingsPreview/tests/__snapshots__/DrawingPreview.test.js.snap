@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DrawingsPreview /> Should render and match the snapshot with all props 1`] = `
+<div
+  class="styled__Wrapper-piem58-0 kVBaoD"
+  data-id="id"
+>
+  <div
+    class="styled__DraftLabel-piem58-1 ddKMGt"
+  />
+  <div
+    class="styled__SelectLabel-piem58-2 eonlas"
+  />
+</div>
+`;
+
+exports[`<DrawingsPreview /> Should render and match the snapshot with default props 1`] = `
+<div
+  class="styled__Wrapper-piem58-0 kVBaoD"
+  data-id="id"
+/>
+`;

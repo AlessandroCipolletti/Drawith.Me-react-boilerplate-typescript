@@ -18,7 +18,7 @@ export function* requestLocalDrawingsSaga() {
     //   drawingId: 1,
     //   userId: 1,
     //   folderId: 1,
-    //   title: '',
+    //   title: 'Image',
     //   description: '',
     //   state: 2,
     //   createTime: new Date().getTime(),
@@ -42,9 +42,7 @@ export function* requestLocalDrawingsSaga() {
 
 export function* deleteSelectedDrawingsSaga({ drawings }) {
   try {
-    drawings.forEach(drawing => {
-      db.drawings.delete(drawing.id)
-    })
+    drawings.forEach(drawing => db.drawings.delete(drawing.id))
   } catch (err) {
     // TODO: show error message
     console.log('db error: DELETE_SELETED_DRAWINGS: ', err)
