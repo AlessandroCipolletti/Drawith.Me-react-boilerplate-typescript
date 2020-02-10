@@ -10,7 +10,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-
 import Carnet from 'pages/Carnet/Loadable'
 import NotFoundPage from 'containers/NotFoundPage/Loadable'
 

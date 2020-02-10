@@ -1,4 +1,5 @@
 import React, { memo } from 'react'
+import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import Shake from 'common/styled/Shake'
 
@@ -10,6 +11,7 @@ import { Overlay, Wrapper, Header, Content } from './styled'
 const Popup = ({
   callback, children, showClose = false, allowClose = true,
 }) => {
+  const wrapper = document.getElementById('app') || document.createElement('div')
   const [visible, setVisible] = React.useState(false)
   const [isShaking, setIsShaking] = React.useState(false)
   const overlayEl = React.useRef(null)
@@ -39,7 +41,7 @@ const Popup = ({
     setVisible(true)
   }, [])
 
-  return (
+  return ReactDOM.createPortal(
     <Overlay
       ref={overlayEl}
       onClick={onOverlayClick}
@@ -56,7 +58,8 @@ const Popup = ({
           }
         </Wrapper>
       </Shake>
-    </Overlay>
+    </Overlay>,
+    wrapper,
   )
 }
 

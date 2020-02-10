@@ -1,5 +1,5 @@
 import produce from 'immer'
-import carnetReducer from '../reducer'
+import carnetReducer, { initialState } from '../reducer'
 import {
   requestLocalDrawingsAction,
   receiveLocalDrawingsAction,
@@ -11,10 +11,6 @@ import {
 /* eslint-disable default-case, no-param-reassign */
 describe('carnetReducer', () => {
   let state
-  const initialState = {
-    isLoading: false,
-    drawings: [],
-  }
 
   beforeEach(() => {
     state = {

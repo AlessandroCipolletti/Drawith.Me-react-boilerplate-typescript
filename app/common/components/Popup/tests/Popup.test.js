@@ -7,7 +7,7 @@
  */
 
 import React from 'react'
-import { render, fireEvent, getByTestId } from 'react-testing-library'
+import { render } from 'react-testing-library'
 
 // Import de Theme Provider
 import { ThemeProvider } from 'styled-components'
@@ -98,70 +98,5 @@ describe('<Popup />', () => {
 
     expect(firstChild).toMatchSnapshot()
   })
-
-  it('Should re-render et match the shapshot for hiding after calling setVisible(false)', () => {
-    const callback = () => {}
-    const allowClose = true
-
-    const { asFragment, container } = renderComponent({ callback, allowClose })
-
-    const overlay = getByTestId(container, 'overlay')
-    fireEvent.click(overlay)
-
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  it('Should prevent multiple calls of callback', async() => {
-    const callback = jest.fn()
-    const allowClose = true
-
-    const { container } = renderComponent({ callback, allowClose })
-    const overlay = getByTestId(container, 'overlay')
-    fireEvent.click(overlay)
-    fireEvent.click(overlay)
-    fireEvent.click(overlay)
-    await new Promise((resolve) => setTimeout(resolve, Theme.timing.fadeAnimation.ms * 1.5))
-
-    expect(callback).toHaveBeenCalledTimes(1)
-  })
-
-  it('Should prevent multiple calls of callback', async() => {
-    const callback = jest.fn()
-    const allowClose = false
-
-    const { container } = renderComponent({ callback, allowClose })
-    const overlay = getByTestId(container, 'overlay')
-    fireEvent.click(overlay)
-    await new Promise((resolve) => setTimeout(resolve, Theme.timing.fadeAnimation.ms * 1.5))
-
-    expect(callback).toHaveBeenCalledTimes(0)
-  })
-
-  // it('Should set `visible` state to false on Overlay click via setVisible(false) if allowClose prop = true', () => {
-  //   const callback = () => {}
-  //   const allowClose = true
-  //   setStateSpy.mockImplementation((init) => [init, setState])
-  //
-  //   const { container } = renderComponent({ callback, allowClose })
-  //   const overlay = getByTestId(container, 'overlay')
-  //   fireEvent.click(overlay)
-  //
-  //   expect(setState).toHaveBeenCalledTimes(1)
-  //   expect(setState).toHaveBeenCalledWith(true)
-  // })
-
-  // it('Should NOT set `visible` state to false on Overlay click via setVisible(false) if allowClose prop = false', async() => {
-  //   const callback = () => {}
-  //   const allowClose = false
-  //   setStateSpy.mockImplementation((init) => [init, setState])
-  //
-  //   const { container } = renderComponent({ callback, allowClose })
-  //   const overlay = getByTestId(container, 'overlay')
-  //   fireEvent.click(overlay)
-  //   await new Promise((resolve) => setTimeout(resolve, 500))
-  //
-  //   expect(setState).toHaveBeenCalledTimes(1)
-  //   expect(setState).toHaveBeenCalledWith(true)
-  // })
 
 })
