@@ -19,7 +19,6 @@ module.exports = {
         alias: {
           app: './app/',
           common: './app/common/',
-          components: './app/components/',
           containers: './app/containers/',
           pages: './app/pages/',
           images: './app/images/',
