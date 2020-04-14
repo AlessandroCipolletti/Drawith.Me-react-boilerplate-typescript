@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-import headerBG from 'images/UI/PageContainer/headerBG.png'
-import logo from 'images/UI/PageContainer/logo.png'
+import headerBG from 'medias/images/UI/PageContainer/headerBG.png'
+import logo from 'medias/images/UI/PageContainer/logo.png'
 
 import HEADER_HEIGHT from 'common/constants'
 

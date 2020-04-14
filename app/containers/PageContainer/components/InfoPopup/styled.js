@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import headerBG from 'images/UI/PageContainer/headerBG.png'
-import logo from 'images/UI/PageContainer/logo.png'
-import draw from 'images/draw.png'
+import headerBG from 'medias/images/UI/PageContainer/headerBG.png'
+import logo from 'medias/images/UI/PageContainer/logo.png'
+import draw from 'medias/images/draw.png'
 
 export const Wrapper = styled.div`
   position: relative;

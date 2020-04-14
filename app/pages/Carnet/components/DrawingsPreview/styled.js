@@ -1,9 +1,9 @@
 import Config from 'common/Config'
 import styled, { css } from 'styled-components'
 
-import draftIcon from 'images/icons/draft.png'
-import selectIcon from 'images/icons/select.png'
-import paper from 'images/papers/white.png'
+import draftIcon from 'medias/images/icons/draft.png'
+import selectIcon from 'medias/images/icons/select.png'
+import paper from 'medias/images/papers/white.png'
 
 const DrawingCssPhone = css`
   @media (orientation: landscape) {

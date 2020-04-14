@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-import newImg from 'images/UI/Carnet/new.png'
-import paper from 'images/papers/white.png'
+import newImg from 'medias/images/UI/Carnet/new.png'
+import paper from 'medias/images/papers/white.png'
 import { DrawingCss } from './styled'
 
 const NewDrawing = styled.div`

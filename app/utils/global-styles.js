@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-import setFireToTheRain from 'fonts/setFireToTheRain.ttf'
+import setFireToTheRain from 'medias/fonts/setFireToTheRain.ttf'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
